@@ -1,0 +1,127 @@
+.operation-button {
+  width: 300px;
+  border: 1px solid darkgreen;
+  color: rgb(44, 44, 44);
+  margin: 2px 0px;
+  height: 50px;
+  font-size: 18px;
+  margin: 3px;
+}
+
+.container {
+  margin-top: 50px;
+  width: 1100px;
+  max-height: 800px;
+  background-color: darkslategray;
+  box-shadow: 0px 0px 10px rgb(47 79 79);
+  border-radius: 5px;
+  padding: 10px;
+ 
+}
+.border-test {
+  border: 2px solid red;
+}
+
+
+
+#bridge-select {
+  width: 300px;
+  height: 75px;
+  font-size: 24px;
+  margin: 10px 0px 2px 0px;
+  box-shadow: inset 0px 0px 8px darkslategrey;
+  border: 0px;
+}
+
+#bridge-title {
+  font-size: 30px;
+  color: white;
+  background-color: lightgray;
+  padding: 10px;
+  margin: 0;
+text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+
+}
+
+
+#operate-button {
+  background-color: rgb(68, 206, 68);
+  border: 1px solid rgb(6, 170, 6);
+  box-shadow: inset 0px 0px 15px rgb(6, 170, 6);
+  height: 125px;
+  font-size: 50px;
+  padding: 0;
+  margin: 2px 0px;
+  width: 300px;
+  color: rgb(47, 63, 63);
+  font-weight: bold;
+}
+
+#map-api-image {
+  
+  margin: 10px 0px 0px 0px;
+  padding: 0px;
+  border-top-left-radius: 3px;
+  width: 100%;
+}
+
+#weather-station {
+  width: 100%;
+  
+  margin: 10px 0px 0px 0px;
+  padding: 0px;
+}
+
+span {
+  padding: 0px !important;
+}
+
+body {
+  background: rgba(26, 185, 224, 0.692);
+}
+
+.dropdown-menu {
+  background: rgb(230, 230, 230);
+  width: 300px;
+  overflow: auto;
+  height: 150px;
+}
+.dropdown-button {
+  background: rgb(230, 230, 230);
+  border: 2px solid rgb(230,230,230);
+  width: 98%;
+  padding: 3px;
+  margin: 3px;
+}
+
+.dropdown-button:hover {
+  background: rgb(222, 222, 222);
+  border-top: 2px solid rgb(215, 215, 215);
+  border-bottom: 2px solid rgb(215, 215, 215);
+  border-radius: 5px;
+}
+
+#canvas-reserve {
+    width: 100%;
+}
+
+.slide-left {
+    padding-left: 0px;
+    margin-left: 0px;
+}
+.slide-right {
+    padding-right: 0px;
+}
+
+#fault-button {
+    background: darkred;
+    color: white;
+    height: 95px;
+    font-size: 20px;
+}
+
+
