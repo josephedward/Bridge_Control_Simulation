@@ -19,8 +19,9 @@
   </head>
   <body>
     <div class="container text-center">
-      <div class="row">
-        <div class="col-md-4">
+      <div class="wrapper22 mx-auto">      
+        <div class="row">
+        <div class="col-4">
           <!-- dropdown buttons -->
           <button
             class="btn btn-light btn-lg dropdown-toggle"
@@ -34,60 +35,90 @@
           </button>
           <br />
           <div class="dropdown-menu">
-            <button class="btn dropdown-button">Buffalo Bluff</button><br />
-            <button class="btn dropdown-button">Kanawha Canal</button><br />
-            <button class="btn dropdown-button">Pascagoula</button><br />
-            <button class="btn dropdown-button">Flagler Memorial</button><br />
-            <button class="btn dropdown-button">Bridge of Lions</button><br />
-            <button class="btn dropdown-button">Harry Nice</button><br />
+            <button class="btn dropdown-button bridge-name" id="bridge-1">Buffalo Bluff</button><br />
+            <button class="btn dropdown-button bridge-name" id="bridge-2">Kanawha Canal</button><br />
+            <button class="btn dropdown-button bridge-name" id="bridge-3">Pascagoula</button><br />
+            <button class="btn dropdown-button bridge-name" id="bridge-4">Flagler Memorial</button><br />
+            <button class="btn dropdown-button bridge-name" id="bridge-5">Bridge of Lions</button><br />
+            <button class="btn dropdown-button bridge-name" id="bridge-6">Harry Nice</button><br />
           </div>
 
           <!-- bridge operation buttons  -->
 
-          <button class="btn " data-state-closed id="operate-button">
+          <button class="btn " data-state="closed" id="operate-button">
             Open</button
           ><br />
           <button
             class="btn btn-success operation-button"
-            data-state-closed
+            data-state="closed"
             id="switch-1"
           >
             SPAN LOCKS DRIVEN</button
           ><br />
           <button
             class="btn btn-success operation-button"
-            data-state-closed
+            data-state="closed"
             id="switch-2"
           >
             TAIL LOCKS DRIVEN</button
           ><br />
           <button
             class="btn btn-success operation-button"
-            data-state-closed
+            data-state="closed"
             id="switch-3"
           >
             MOTOR BRAKES SET</button
           ><br />
           <button
             class="btn btn-success operation-button"
-            data-state-closed
+            data-state="closed"
             id="switch-4"
           >
             MACHINERY BRAKES SET</button
           ><br />
           <button
             class="btn btn-success operation-button"
-            data-state-closed
+            data-state="closed"
             id="switch-5"
           >
             BRIDGE CLOSED</button
           ><br />
-          <button class="btn operation-button" id="fault-button">Fault History</button>
+
+<!-- modal experiment            -->
+          <!-- <button class="btn operation-button" id="fault-button">
+            Fault History
+          </button> -->
+
+
+          <!-- Button trigger modal -->
+<button type="button" class="btn operation-button" id="fault-button" data-toggle="modal" data-target="#exampleModal">
+    Fault History
+  </button>
+        <!-- Fault History -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Fault History</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-        <div class="col-md-8">
+        <div class="modal-body" id="alarm-list">
+          No Alarms
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Acknowledge Alarms</button>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+        </div>
+        <div class="col-8">
           <div class="row">
-               
-            <div class="col-md-8 slide-right">
+            <div class="col-8 slide-right">
               <!-- bridge picture -->
               <img
                 src="https://place-hold.it/416x182"
@@ -96,31 +127,30 @@
               />
             </div>
             <!-- weather station -->
-            <div class="col-md-4 slide-left">
+            <div class="col-4 slide-left">
               <img
                 src="https://place-hold.it/200x182"
                 id="weather-station"
                 alt="weather display"
               />
             </div>
-            
           </div>
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-12">
               <h1 id="bridge-title">
-                NORFOLK SOUTHERN KANAWHA CANAL RAILROAD BRIDGE
+                Kanawha Canal
               </h1>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-12">
-              <img src="https://place-hold.it/616x304" id="canvas-reserve"/>
+            <div class="col-12">
+              <canvas></canvas>
             </div>
           </div>
         </div>
       </div>
     </div>
-
+    </div>
     <!-- bootstrap javascript files -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -144,3 +174,7 @@
     <script src="assets/javascript/app.js"></script>
   </body>
 </html>
+
+
+
+

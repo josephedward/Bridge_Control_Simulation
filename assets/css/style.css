@@ -10,13 +10,13 @@
 
 .container {
   margin-top: 50px;
-  width: 1100px;
-  max-height: 800px;
+  width: 960px !important;
+  max-height: 800px;  
   background-color: darkslategray;
   box-shadow: 0px 0px 10px rgb(47 79 79);
   border-radius: 5px;
   padding: 10px;
- 
+
 }
 .border-test {
   border: 2px solid red;
@@ -66,11 +66,11 @@ text-shadow:
   margin: 10px 0px 0px 0px;
   padding: 0px;
   border-top-left-radius: 3px;
-  width: 100%;
+  /* width: 100%; */
 }
 
 #weather-station {
-  width: 100%;
+  /* width: 100%; */
   
   margin: 10px 0px 0px 0px;
   padding: 0px;
@@ -123,5 +123,46 @@ body {
     height: 95px;
     font-size: 20px;
 }
+
+.released {
+  background: yellow;
+
+}
+
+.released:hover {
+  background: yellow;
+  color: black;
+}
+.transition {
+  background: orange;
+  color: black;
+	-webkit-animation: flash linear 1s infinite;
+	animation: flash linear 1s infinite;
+}
+
+.transition:hover {
+  background: orange;
+  color: black;
+	-webkit-animation: flash linear 1s infinite;
+	animation: flash linear 1s infinite;
+}
+
+@-webkit-keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .5; } 
+	100% { opacity: 1; }
+}
+@keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .5; } 
+	100% { opacity: 1; }
+}
+
+canvas {
+  width: 616px;
+  height: 304px;
+  background-color:black;
+}
+
 
 
