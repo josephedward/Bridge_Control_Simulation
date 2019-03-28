@@ -78,3 +78,56 @@ $switch5.on("click", function(){
     }
 
 });
+
+
+
+//grab bridge selection and put title in bridge title block
+
+$(".bridge-name").on("click", function() {
+    var bridgeTitle = $(this).text();
+    $("#bridge-title").text(bridgeTitle);
+})
+
+
+//reference bridge title in API call
+
+
+
+
+//algorithm success
+
+/* click handler to watch for open button clicked
+
+when open button is clicked, launch genetic algorithm
+
+if the data-state of switch-1, switch-2, switch-3 switch-4 and switch-5 are
+set to closed, change switch-1 data-state to open
+
+if data-state of switch-1 is open && switch-2 is closed && switch-3 is closed
+&& switch-4 is closed && switch 5 is closed; change switch-2 to open
+
+if data-state of switch-3 is open && switch-2 is open && switch-3 is closed &&
+switch-4 is closed && switch-5 is closed; change switch-3 to open
+
+if data-state of switch-3 is open && switch-2 is open && switch-3 is open &&
+switch-4 is closed && switch-5 is closed; change switch-4 to open
+
+if data-state of switch-3 is open && switch-2 is open && switch-3 is open &&
+switch-4 is closed && switch-5 is closed; change switch-4 to open;
+
+if data-state of switch-3 is open && switch-2 is open && switch-3 is closed &&
+switch-4 is open && switch-5 is closed; change switch-5 to transition
+
+if switch-5 data-state="transition" .play()
+
+
+else if {
+
+
+if switch-1 data-state="open" && switch-2 data-state="closed" && switch-3 data-state="open"
+add error "Operation out of sequence" to alarm list (prompt bridge explosion photo in canvas????)
+
+stack if statements inside of else if where any situation that mimics the scenario above
+returns the error and resets all data states to closed.
+
+*/
