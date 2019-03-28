@@ -166,3 +166,16 @@ canvas {
 
 
 
+#alarm-list {
+  overflow: auto;
+  text-align: left !important;
+}
+
+.modal-content {
+  width: 600px;
+  height: 400px;
+}
+
+.modal-body {
+  overflow: auto;
+}
