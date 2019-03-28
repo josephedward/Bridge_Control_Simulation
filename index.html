@@ -19,8 +19,9 @@
   </head>
   <body>
     <div class="container text-center">
-      <div class="row">
-        <div class="col-md-4">
+      <div class="wrapper22 mx-auto">      
+        <div class="row">
+        <div class="col-4">
           <!-- dropdown buttons -->
           <button
             class="btn btn-light btn-lg dropdown-toggle"
@@ -44,50 +45,51 @@
 
           <!-- bridge operation buttons  -->
 
-          <button class="btn " data-state-closed id="operate-button">
+          <button class="btn " data-state="closed" id="operate-button">
             Open</button
           ><br />
           <button
             class="btn btn-success operation-button"
-            data-state-closed
+            data-state="closed"
             id="switch-1"
           >
             SPAN LOCKS DRIVEN</button
           ><br />
           <button
             class="btn btn-success operation-button"
-            data-state-closed
+            data-state="closed"
             id="switch-2"
           >
             TAIL LOCKS DRIVEN</button
           ><br />
           <button
             class="btn btn-success operation-button"
-            data-state-closed
+            data-state="closed"
             id="switch-3"
           >
             MOTOR BRAKES SET</button
           ><br />
           <button
             class="btn btn-success operation-button"
-            data-state-closed
+            data-state="closed"
             id="switch-4"
           >
             MACHINERY BRAKES SET</button
           ><br />
           <button
             class="btn btn-success operation-button"
-            data-state-closed
+            data-state="closed"
             id="switch-5"
           >
             BRIDGE CLOSED</button
           ><br />
-          <button class="btn operation-button" id="fault-button">Fault History</button>
+          <button class="btn operation-button" id="fault-button">
+            Fault History
+          </button>
         </div>
-        <div class="col-md-8">
+        <div class="col-8">
           <div class="row">
-               
-            <div class="col-md-8 slide-right">
+            <div class="col-8 slide-right">
               <!-- bridge picture -->
               <img
                 src="https://place-hold.it/416x182"
@@ -96,31 +98,30 @@
               />
             </div>
             <!-- weather station -->
-            <div class="col-md-4 slide-left">
+            <div class="col-4 slide-left">
               <img
                 src="https://place-hold.it/200x182"
                 id="weather-station"
                 alt="weather display"
               />
             </div>
-            
           </div>
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-12">
               <h1 id="bridge-title">
                 NORFOLK SOUTHERN KANAWHA CANAL RAILROAD BRIDGE
               </h1>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-12">
-              <img src="https://place-hold.it/616x304" id="canvas-reserve"/>
+            <div class="col-12">
+              <canvas></canvas>
             </div>
           </div>
         </div>
       </div>
     </div>
-
+    </div>
     <!-- bootstrap javascript files -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
