@@ -125,11 +125,37 @@ body {
 }
 
 .released {
-  background: red;
+  background: yellow;
+
 }
 
-.transition {
+.released:hover {
   background: yellow;
+  color: black;
+}
+.transition {
+  background: orange;
+  color: black;
+	-webkit-animation: flash linear 1s infinite;
+	animation: flash linear 1s infinite;
+}
+
+.transition:hover {
+  background: orange;
+  color: black;
+	-webkit-animation: flash linear 1s infinite;
+	animation: flash linear 1s infinite;
+}
+
+@-webkit-keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .5; } 
+	100% { opacity: 1; }
+}
+@keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .5; } 
+	100% { opacity: 1; }
 }
 
 canvas {
