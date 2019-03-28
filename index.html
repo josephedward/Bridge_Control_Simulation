@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge" /> -->
     <title>Bridge Control Simulator</title>
     <!-- css reset -->
     <link rel="stylesheet" href="assets/css/reset.css" />
@@ -84,18 +84,13 @@
             BRIDGE CLOSED</button
           ><br />
 
-<!-- modal experiment            -->
-          <!-- <button class="btn operation-button" id="fault-button">
-            Fault History
-          </button> -->
-
 
           <!-- Button trigger modal -->
-<button type="button" class="btn operation-button" id="fault-button" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn operation-button" id="fault-button" data-toggle="modal" data-target="#alarm-modal">
     Fault History
   </button>
         <!-- Fault History -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="alarm-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -104,11 +99,14 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body" id="alarm-list">
-          No Alarms
+        <div class="modal-body">
+          <ul id="alarm-list">
+
+          </ul>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Acknowledge Alarms</button>
+            <button type="button" class="btn btn-danger" id="clear-faults">Clear Faults</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Acknowledge Faults</button>
           </button>
         </div>
       </div>
@@ -138,7 +136,7 @@
           <div class="row">
             <div class="col-12">
               <h1 id="bridge-title">
-                Kanawha Canal
+                Select Bridge
               </h1>
             </div>
           </div>
@@ -170,6 +168,8 @@
 
     <!-- jquery cdn -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- moment.js -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <!-- custom js -->
     <script src="assets/javascript/app.js"></script>
   </body>
