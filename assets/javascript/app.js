@@ -218,3 +218,4 @@ function alarmList() {
 $("#clear-faults").on("click", function(){
     $("#alarm-list").empty();
 })
+
