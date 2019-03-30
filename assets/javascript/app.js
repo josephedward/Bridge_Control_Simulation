@@ -7,6 +7,7 @@ var $switch4 = $("#switch-4");
 var $switch5 = $("#switch-5");
 var errorLog = [];
 var transition = false;
+var loggedIn = false;
 
 //toggle between driven and pulled for locks. override css
 $switch1.on("click", function() {
@@ -186,3 +187,27 @@ $("#clear-faults").on("click", function(){
     $("#alarm-list").empty();
 })
 
+
+
+
+// log in functionality
+var username = "";
+$("#user-login").on("click", function(event){
+
+  event.preventDefault();
+
+if ($("#username").val().trim() === "") {
+  alert("You fucked up the login.");
+  return false;
+} else if ($("#password").val().trim() === "") {
+  alert("you fucked up the password");
+  return false;
+} else {
+  loggedIn = true;
+  username = $("#username").val().trim();
+  $("#log-screen").toggleClass("hidden");
+  $("#active").toggleClass("hidden");
+  
+}
+
+})
