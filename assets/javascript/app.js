@@ -9,6 +9,8 @@ var errorLog = [];
 var transition = false;
 var loggedIn = false;
 
+
+
 //toggle between driven and pulled for locks. override css
 $switch1.on("click", function() {
 

@@ -10,7 +10,7 @@
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"
     defer></script>
-    <script src="assets/javascript/bridgecontrol.js" defer></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
 
     <title>Bridge Control Simulator</title>
@@ -24,7 +24,7 @@
   <body>
     <div class="container text-center">
       <!-- log in screen -->
-      <div class="wrapper22 mx-auto" id="log-screen">
+      <div class="wrapper22 mx-auto" id="log-screen" class="hidden">
 
       <div id="login">
         <form>
@@ -38,7 +38,7 @@
 </div>
 
       <!-- bridge screen -->
-      <div class="wrapper22 mx-auto hidden" id="active">      
+      <div class="wrapper22 mx-auto" id="active">      
         <div class="row">
         <div class="col-4">
           <!-- dropdown buttons -->
@@ -65,8 +65,8 @@
           <!-- bridge operation buttons  -->
 
           <button class="btn " data-state="closed" id="operate-button">
-            Open</button
-          ><br />
+            Open</button>
+            <br />
           <button
             class="btn btn-success operation-button"
             data-state="closed"
@@ -171,6 +171,8 @@
       </div>
     </div>
     </div>
+    <script src="assets/javascript/bridgecontrol.js" defer></script>
+
     <!-- bootstrap javascript files -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
