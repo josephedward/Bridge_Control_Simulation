@@ -23,21 +23,24 @@
   <body>
     <div class="container text-center">
       <!-- log in screen -->
-      <div class="wrapper22 mx-auto" id="log-screen">
+      <div class="wrapper22 mx-auto hidden" id="login-screen">
 
       <div id="login">
         <form>
-          Username
+          Username <br>
           <input type="text" id="username">
+          <br>
           Password
+          <br>
           <input type="password" id="password">
+          <br><br>
           <input type="submit" value="LOGIN" id="user-login">
         </form>
       </div>
 </div>
 
       <!-- bridge screen -->
-      <div class="wrapper22 mx-auto hidden" id="active">      
+      <div class="wrapper22 mx-auto" id="active">      
         <div class="row">
         <div class="col-4">
           <!-- dropdown buttons -->
@@ -119,7 +122,7 @@
         </div>
         <div class="modal-body">
           <ul id="alarm-list">
-
+          
           </ul>
         </div>
         <div class="modal-footer">
@@ -135,14 +138,32 @@
         </div>
         <div class="col-8">
           <div class="row">
-            <div class="col-8 slide-right">
+            <div class="col-8 slide-right ">
               <!-- Weather Station -->
-
-              <img
+              <div class="border">
+                <div class="weather-content">
+                  <span>
+                  wer
+                  </span>
+                  <span>
+                  wer
+                  </span>
+                  <span>
+                  wer
+                  </span>
+                  <span>
+                    wer
+                  </span>
+                  <span>
+                  wer
+                  </span>
+                </div>
+              </div>
+              <!-- <img
                 src="https://place-hold.it/416x222"
                 id="map-api-image"
                 alt="bridge photo"
-              />
+              /> -->
             </div>
             <!-- Time Display -->
             <div class="col-4 slide-left">
@@ -199,7 +220,3 @@
     <script src="assets/javascript/app.js"></script>
   </body>
 </html>
-
-
-
-

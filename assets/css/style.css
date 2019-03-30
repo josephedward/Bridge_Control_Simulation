@@ -177,6 +177,7 @@ body {
 .modal-content {
   width: 600px;
   height: 400px;
+  overflow: auto;
 }
 
 .modal-body {
@@ -187,3 +188,32 @@ body {
   display: none;
 }
 
+#login-screen {
+  height: 500px;
+  color: black;
+  
+}
+
+#login {
+  padding-top: 5%;
+  font-size: 30px;
+  margin: 10% auto;
+  background: lightgrey;
+  height: 80%;
+  width: 40%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px black;
+}
+
+#login input {
+  border-radius: 6px;
+}
+
+.border{
+  border: 2px solid red;
+  width: 416px;
+  height: 222px;
+  margin: 10px 0px 0px 0px;
+  padding: 0px;
+  border-top-left-radius: 3px;
+}

@@ -205,9 +205,8 @@ if ($("#username").val().trim() === "") {
 } else {
   loggedIn = true;
   username = $("#username").val().trim();
-  $("#log-screen").toggleClass("hidden");
+  $("#login-screen").toggleClass("hidden");
   $("#active").toggleClass("hidden");
-  
-}
 
+}
 })
