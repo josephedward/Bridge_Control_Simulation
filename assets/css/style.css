@@ -163,6 +163,12 @@ body {
   background-color: black;
 }
 
+#bridge-image {
+  width: 616px;
+  height: 304px;
+  background-color: black;
+}
+
 #alarm-list {
   overflow: auto;
   text-align: left !important;
