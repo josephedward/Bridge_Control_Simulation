@@ -1,21 +1,63 @@
 $(document).ready(function() {
-checkOpeningSequence();
+});
+    // runOpeningSequence();
+
+    // checkFailureConditions();
+   
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC1kKG2iWXeLJ2kTQmk-UHfQTYYrGrmEfk",
+    authDomain: "group-project-bridgecontrol.firebaseapp.com",
+    databaseURL: "https://group-project-bridgecontrol.firebaseio.com",
+    projectId: "group-project-bridgecontrol",
+    storageBucket: "",
+    messagingSenderId: "206097633250"
+  };
+  firebase.initializeApp(config);
+
+var database=firebase.database();
+
+
+function pushFirebase(errorLog){
+database.ref().set({
+    errorLog:errorLog,
+    dateAdded: firebase.database.ServerValue.TIMESTAMP
+});
+}
+
+
+var historicErrorLogFBase;
+
+database.ref().on("value",function(fireLog){
+historicErrorLogFBase=fireLog.val().errorLog;
+});
+
+$("#fault-history").on("click",function(){
+    for (var i = 0; i < historicErrorLogFBase.length; i++) {
+    var errorLi = `<li> ${historicErrorLogFBase[i]} </li>`;
+    // console.log(errorLog[i]);
+    $("#alarm-list").append(errorLi);
+    }
+});
+
+$("#reset").on("click", function(){
+
+    database.ref('/').set("reset.json");
+    location.reload();
 
 });
 
-var getAttrDataState=".attr('data-state')";
+//This was for testing methods
 
+var getAttrDataState=".attr('data-state')";
 //triggered by opening sequence 
-function runOpeningSequence(){
-    //ran in sequence
+ //ran in sequence
     //for each button
     //how to check data-state of button
     //if data-state is open
-    //all others must be closed
-    
+    //all others must be closed    
 //console log data state
-
-
+function checkOpeningSequence(){   
 if(
     $switch1.getAttrDataState==="closed"&&
     $switch2.getAttrDataState==="closed"&&
@@ -77,17 +119,28 @@ if($switch5.getAttrDataState==="transition-open")
 
 }
 
-// function checkFailureConditions(){
-// var switchArr  =[$switch1,$switch2,$switch3,$switch4,$swich5];
+function checkFailureConditions(){
+    $switch1.attr("data-state","open");
+    $switch5.attr("data-state","open");
+    var switchArr  =[$switch1,$switch2,$switch3,$switch4,$swich5];
+for (x=0;x<switchArr.length;x++)
+{
+    if((switchArr[x].getAttrDataState==="open")&&(switchArr[x-1].getAttrDataState==="closed"))
+    {
+     bridgeExplodes();   
+    }
+}
 
+}
 
-// for (x=0;x<switchArr.length;x++)
-// {
-//     if(switchArr[x].getAttrDataState)
-// }
-
-// }
-
+function bridgeExplodes()
+{
+    console.log("bridge explodes");
+    $("#imgHolder").empty();
+    $("#imgHolder").append("<iframe src='https://giphy.com/embed/12KiGLydHEdak8' width='616px' height='304px' frameBorder='0' class='giphy-embed' allowFullScreen></iframe>");
+    //wait some time then put canvas back
+    setTimeout(function(){$("#imgHolder").append("<canvas></canvas>");}, 3000);
+}
 
 
 //algorithm success
