@@ -33,6 +33,7 @@ historicErrorLogFBase=fireLog.val().errorLog;
 });
 
 $("#fault-history").on("click",function(){
+    $("#alarm-list").empty();
     for (var i = 0; i < historicErrorLogFBase.length; i++) {
     var errorLi = `<li> ${historicErrorLogFBase[i]} </li>`;
     // console.log(errorLog[i]);
