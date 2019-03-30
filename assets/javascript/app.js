@@ -175,7 +175,7 @@ $(".bridge-name").on("click", function() {
 function alarmList() {
   for (var i = 0; i < errorLog.length; i++) {
 
-    var errorLi = `<li> ${errorLog[i]} </li>`;
+    var errorLi = `<li>User: ${username} Error: ${historicErrorLogFBase[i]} </li>`;
     console.log(errorLog[i]);
     $("#alarm-list").append(errorLi);
   }
