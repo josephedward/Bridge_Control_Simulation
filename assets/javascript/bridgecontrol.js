@@ -20,6 +20,7 @@ var database=firebase.database();
 
 function pushFirebase(errorLog){
 database.ref().set({
+    username:username,
     errorLog:errorLog,
     dateAdded: firebase.database.ServerValue.TIMESTAMP
 });
@@ -36,7 +37,7 @@ $("#fault-history").on("click",function(){
     $("#alarm-list").empty();
 
     for (var i = 0; i < historicErrorLogFBase.length; i++) {
-    var errorLi = `<li> ${historicErrorLogFBase[i]} </li>`;
+    var errorLi = `<li>User: ${username} Error: ${historicErrorLogFBase[i]} </li>`;
     // console.log(errorLog[i]);
     ;
     $("#alarm-list").append(errorLi);
