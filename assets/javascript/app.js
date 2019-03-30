@@ -207,7 +207,7 @@ if ($("#username").val().trim() === "") {
   username = $("#username").val().trim();
   $("#log-screen").toggleClass("hidden");
   $("#active").toggleClass("hidden");
-
+  
 }
 
 })
