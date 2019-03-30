@@ -34,9 +34,11 @@ historicErrorLogFBase=fireLog.val().errorLog;
 
 $("#fault-history").on("click",function(){
     $("#alarm-list").empty();
+
     for (var i = 0; i < historicErrorLogFBase.length; i++) {
     var errorLi = `<li> ${historicErrorLogFBase[i]} </li>`;
     // console.log(errorLog[i]);
+    ;
     $("#alarm-list").append(errorLi);
     }
 });
@@ -137,10 +139,10 @@ for (x=0;x<switchArr.length;x++)
 function bridgeExplodes()
 {
     console.log("bridge explodes");
-    $("#imgHolder").empty();
-    $("#imgHolder").append("<iframe src='https://giphy.com/embed/12KiGLydHEdak8' width='616px' height='304px' frameBorder='0' class='giphy-embed' allowFullScreen></iframe>");
+    $("#canvas").empty();
+    $("#canvas").append("<iframe src='https://giphy.com/embed/12KiGLydHEdak8' width='616px' height='304px' frameBorder='0' class='giphy-embed' allowFullScreen></iframe>");
     //wait some time then put canvas back
-    setTimeout(function(){$("#imgHolder").append("<canvas></canvas>");}, 3000);
+    setTimeout(function(){$("#canvas").append("<canvas></canvas>");}, 3000);
 }
 
 

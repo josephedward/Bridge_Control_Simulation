@@ -11,19 +11,16 @@
 .container {
   margin-top: 50px;
   width: 960px !important;
-  max-height: 800px;  
+  max-height: 800px;
   background-color: darkslategray;
   box-shadow: 0px 0px 10px rgb(47 79 79);
   border-radius: 5px;
   padding: 10px;
-
 }
 
 .border-test {
   border: 2px solid red;
 }
-
-
 
 #bridge-select {
   width: 300px;
@@ -40,14 +37,9 @@
   background-color: lightgray;
   padding: 10px;
   margin: 0;
-text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
-
 }
-
 
 #operate-button {
   background-color: rgb(68, 206, 68);
@@ -63,7 +55,6 @@ text-shadow:
 }
 
 #map-api-image {
-  
   margin: 10px 0px 0px 0px;
   padding: 0px;
   border-top-left-radius: 3px;
@@ -72,7 +63,7 @@ text-shadow:
 
 #weather-station {
   /* width: 100%; */
-  
+
   margin: 10px 0px 0px 0px;
   padding: 0px;
 }
@@ -93,7 +84,7 @@ body {
 }
 .dropdown-button {
   background: rgb(230, 230, 230);
-  border: 2px solid rgb(230,230,230);
+  border: 2px solid rgb(230, 230, 230);
   width: 98%;
   padding: 3px;
   margin: 3px;
@@ -106,28 +97,23 @@ body {
   border-radius: 5px;
 }
 
-#canvas-reserve {
-    width: 100%;
-}
-
 .slide-left {
-    padding-left: 0px;
-    margin-left: 0px;
+  padding-left: 0px;
+  margin-left: 0px;
 }
 .slide-right {
-    padding-right: 0px;
+  padding-right: 0px;
 }
 
 #fault-button {
-    background: darkred;
-    color: white;
-    height: 95px;
-    font-size: 20px;
+  background: darkred;
+  color: white;
+  height: 95px;
+  font-size: 20px;
 }
 
 .released {
   background: yellow;
-
 }
 
 .released:hover {
@@ -137,35 +123,51 @@ body {
 .transition {
   background: orange;
   color: black;
-	-webkit-animation: flash linear 1s infinite;
-	animation: flash linear 1s infinite;
+  -webkit-animation: flash linear 1s infinite;
+  animation: flash linear 1s infinite;
 }
 
 .transition:hover {
   background: orange;
   color: black;
-	-webkit-animation: flash linear 1s infinite;
-	animation: flash linear 1s infinite;
+  -webkit-animation: flash linear 1s infinite;
+  animation: flash linear 1s infinite;
 }
 
 @-webkit-keyframes flash {
-	0% { opacity: 1; } 
-	50% { opacity: .5; } 
-	100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 @keyframes flash {
-	0% { opacity: 1; } 
-	50% { opacity: .5; } 
-	100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-canvas {
+#canvas {
   width: 616px;
   height: 304px;
-  background-color:black;
+  background-color: black;
 }
 
-
+#bridge-image {
+  width: 616px;
+  height: 304px;
+  background-color: black;
+}
 
 #alarm-list {
   overflow: auto;
@@ -180,3 +182,4 @@ canvas {
 .modal-body {
   overflow: auto;
 }
+
