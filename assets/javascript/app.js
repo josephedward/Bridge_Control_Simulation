@@ -176,9 +176,12 @@ if ($("#username").val().trim() === "") {
 } else {
   loggedIn = true;
   username = $("#username").val().trim();
-  $("#log-screen").toggleClass("hidden");
+  $("#login-screen").toggleClass("hidden");
   $("#active").toggleClass("hidden");
-  
-}
 
+<<<<<<< HEAD
 });
+=======
+}
+})
+>>>>>>> 793634fd4fe22a62563a8c504748c64e1e4778dc

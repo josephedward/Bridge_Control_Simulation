@@ -27,14 +27,17 @@
   <body>
     <div class="container text-center">
       <!-- log in screen -->
-      <div class="wrapper22 mx-auto" id="log-screen">
+      <div class="wrapper22 mx-auto " id="login-screen">
 
       <div id="login">
         <form>
-          Username
+          Username <br>
           <input type="text" id="username">
+          <br>
           Password
+          <br>
           <input type="password" id="password">
+          <br><br>
           <input type="submit" value="LOGIN" id="user-login">
           <button type="button" class="btn btn-danger" id="testMode">Test Mode</button>
         </form>
@@ -63,7 +66,7 @@
             <button class="btn dropdown-button bridge-name" id="bridge-2" data-type="est" data-coord="lat=37.53&lon=-77.42">Kanawha Canal</button><br />
             <button class="btn dropdown-button bridge-name" id="bridge-3" data-type="cst" data-coord="lat=30.37&lon=-88.56">Pascagoula</button><br />
             <button class="btn dropdown-button bridge-name" id="bridge-4" data-type="est" data-coord="lat=26.72&lon=-80.05">Flagler Memorial</button><br />
-            <button class="btn dropdown-button bridge-name" id="bridge-5" data-type="est" data-coord="lat=29.89&lon=-81.31">Bridge of Lions</button><br />
+            <button class="btn dropdown-button bridge-name" id="bridge-5" data-type="est" data-coord="lat=29.89&lon=-81.31">Henry Ford</button><br />
             <button class="btn dropdown-button bridge-name" id="bridge-6" data-type="est" data-coord="lat=38.36&lon=-76.99">Harry Nice</button><br />
           </div>
 
@@ -125,7 +128,7 @@
         </div>
         <div class="modal-body">
           <ul id="alarm-list">
-
+          
           </ul>
         </div>
         <div class="modal-footer" id="faultButtons">
@@ -142,8 +145,29 @@
         </div>
         <div class="col-8">
           <div class="row">
-            <div class="col-8 slide-right">
+            <div class="col-8 slide-right ">
               <!-- Weather Station -->
+              <div class="border1">
+                <div class="row weather-content">
+                    <div class="col-12"><h2 class="weather-title">Weather Information</h2></div>
+                  <div class="col-4">
+                      <div class="weather-box-title">Temperature</div>
+                      <div id="temp-display" class="weather-box">&nbsp;</div>
+                      <div class="weather-box-title">Humidity</div>
+                      <div id="humidity-display" class="weather-box">&nbsp;</div>
+                  </div>
+                  <div class="col-4">
+                    <div class="weather-box-title">Conditions</div>
+                  <div id="conditions-display" class="weather-box">&nbsp;</div>
+                    <div class="weather-box-title">Wind Speed</div>
+                  <div id="windSpeed-display" class="weather-box">&nbsp;</div>
+                  </div>
+                  <div class="col-4">
+                    <div class="wind-direction-box-title">Wind Direction</div>
+                  <div id="windDegrees-display" class="wind-direction-box">&nbsp;</div>
+                  </div>
+                </div>
+              </div>
               <div id="temp-display"></div>
               <div id="humidity-display"></div>
               <div id="conditions-display"></div>
@@ -208,7 +232,3 @@
     <script src="assets/javascript/app.js" defer></script>
   </body>
 </html>
-
-
-
-

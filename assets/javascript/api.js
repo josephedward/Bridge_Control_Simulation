@@ -52,11 +52,11 @@ $(document).on("click", ".bridge-name", function displayWeather() {
 
     var conditionsUppercase = titleCase(conditions);
 
-    $("#temp-display").text(`Current Temperature: ${temp}°F`);
-    $("#humidity-display").text(`Humidity: ${humidity}%`);
-    $("#conditions-display").text(`Conditions: ${conditionsUppercase}`);
-    $("#windSpeed-display").text(`Wind Speed: ${windSpeed}mph`);
-    $("#windDegrees-display").text(`Wind Degrees: ${windDegress}°`);
+    $("#temp-display").text(`${temp} °F`);
+    $("#humidity-display").text(`${humidity} %`);
+    $("#conditions-display").text(`${conditionsUppercase}`);
+    $("#windSpeed-display").text(`${windSpeed}mph`);
+    $("#windDegrees-display").text(`${windDegress}°`);
 
     console.log(temp);
     console.log(humidity);
