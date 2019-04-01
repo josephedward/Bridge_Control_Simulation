@@ -161,24 +161,28 @@ $("#clear-faults").on("click", function(){
 
 
 
-// log in functionality
-var username = "";
-$("#user-login").on("click", function(event){
+// // log in functionality
+// var username = "";
+// $("#user-login").on("click", function(event){
 
-  event.preventDefault();
+//   event.preventDefault();
 
-if ($("#username").val().trim() === "") {
-  alert("No login.");//Didn't they say no alerts ?
-  return false;
-} else if ($("#password").val().trim() === "") {
-  alert("No password");
-  return false;
-} else {
-  loggedIn = true;
-  username = $("#username").val().trim();
-  $("#login-screen").toggleClass("hidden");
-  $("#active").toggleClass("hidden");
+// if ($("#username").val().trim() === "") {
+//   alert("You fucked up the login.");
+//   return false;
+// } else if ($("#password").val().trim() === "") {
+//   alert("you fucked up the password");
+//   return false;
+// } else {
+//   loggedIn = true;
+//   username = $("#username").val().trim();
+//   $("#login-screen").toggleClass("hidden");
+//   $("#active").toggleClass("hidden");
 
-}
-});
+// }
+// })
+
+
+
+
 
