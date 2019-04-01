@@ -1,3 +1,15 @@
+// function to capitalize first letter of each word in a string
+var titleCase = function(str) {
+  var result = [];
+  var words = str.split(" ");
+  for (var i = 0; i < words.length; i++) {
+    var word = words[i].split("");
+    word[0] = word[0].toUpperCase();
+    result.push(word.join(""));
+  }
+  return result.join(" ");
+};
+
 // displays the current time based on the which bridge is selected
 $(document).on("click", ".bridge-name", function displayTime() {
   var timezone = $(this).attr("data-type");
@@ -32,31 +44,45 @@ $(document).on("click", ".bridge-name", function displayWeather() {
   }).then(function(response) {
     console.log(response);
 
-    var temp = response.main.temp;
+    var temp = Math.round(response.main.temp);
     var humidity = response.main.humidity;
     var conditions = response.weather[0].description;
-    var windSpeed = response.wind.speed;
+    var windSpeed = Math.round(response.wind.speed);
     var windDegress = response.wind.deg;
 
-    // function to capitalize first letter of each word in a string
-    var titleCase = function(str) {
-      var result = [];
-      var words = str.split(" ");
-      for (var i = 0; i < words.length; i++) {
-        var word = words[i].split("");
-        word[0] = word[0].toUpperCase();
-        result.push(word.join(""));
-      }
-      return result.join(" ");
-    };
+    // takes the windDegrees number and equates that to a direction that will display after the degree number
+    function degToCompass(num) {
+      var val = Math.floor(num / 22.5 + 0.5);
+      var arr = [
+        "N",
+        "NNE",
+        "NE",
+        "ENE",
+        "E",
+        "ESE",
+        "SE",
+        "SSE",
+        "S",
+        "SSW",
+        "SW",
+        "WSW",
+        "W",
+        "WNW",
+        "NW",
+        "NNW"
+      ];
+      return arr[val % 16];
+    }
 
     var conditionsUppercase = titleCase(conditions);
 
-    $("#temp-display").text(`${temp} °F`);
-    $("#humidity-display").text(`${humidity} %`);
+    $("#temp-display").text(`${temp}°F`);
+    $("#humidity-display").text(`${humidity}%`);
     $("#conditions-display").text(`${conditionsUppercase}`);
     $("#windSpeed-display").text(`${windSpeed}mph`);
-    $("#windDegrees-display").text(`${windDegress}°`);
+    $("#windDegrees-display").text(
+      `${windDegress}°${degToCompass(windDegress)}`
+    );
 
     console.log(temp);
     console.log(humidity);
