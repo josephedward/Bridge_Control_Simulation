@@ -9,6 +9,8 @@ var errorLog = [];
 var transition = false;
 var loggedIn = false;
 
+
+
 //toggle between driven and pulled for locks. override css
 $switch1.on("click", function() {
 
@@ -31,12 +33,7 @@ $switch1.on("click", function() {
 
     //log error if pressed out of sequence
   } else {
-    var currentDate = moment().format('lll');
-    errorLog.push( currentDate.toUpperCase() + " -  " + $(this).text() + " OUT OF SEQUENCE");
-    console.log(errorLog);
-    pushFirebase(errorLog);
-    $("#alarm-list").empty();
-    alarmList();
+    alarmList(this);
   }
 });
 
@@ -58,12 +55,7 @@ $switch2.on("click", function() {
       $switch2.attr("data-state", "closed");
     }
   } else {
-    var currentDate = moment().format('lll');
-    errorLog.push( currentDate.toUpperCase() + " -  " + $(this).text() + " OUT OF SEQUENCE");
-    console.log(errorLog);
-    pushFirebase(errorLog);
-    $("#alarm-list").empty();
-    alarmList();
+    alarmList(this);
   }
 });
 
@@ -85,11 +77,7 @@ $switch3.on("click", function() {
       $switch3.attr("data-state", "closed");
     }
   } else {
-    var currentDate = moment().format('lll');
-    errorLog.push( currentDate.toUpperCase() + " -  " + $(this).text() + " OUT OF SEQUENCE");
-    console.log(errorLog);
-    $("#alarm-list").empty();
-    alarmList();
+    alarmList(this);
   }
 });
 
@@ -112,12 +100,7 @@ $switch4.on("click", function() {
       $switch4.attr("data-state", "closed");
     }
   } else {
-    var currentDate = moment().format('lll');
-    errorLog.push( currentDate.toUpperCase() + " -  " + $(this).text() + " OUT OF SEQUENCE");
-    console.log(errorLog);
-    pushFirebase(errorLog);
-    $("#alarm-list").empty();
-    alarmList();
+    alarmList(this);
   }
 });
 
@@ -152,16 +135,11 @@ $switch5.on("click", function() {
       transition = false;
     }
   } else {
-    var currentDate = moment().format('lll');
-    errorLog.push( currentDate.toUpperCase() + " -  " + $(this).text() + " OUT OF SEQUENCE");
-    console.log(errorLog);
-    pushFirebase(errorLog);
-    $("#alarm-list").empty();
-    alarmList();
+    alarmList(this);
   }
 });
 
-//grab bridge selection and put title in bridge title block
+//grab bridgethis selection and put title in bridge title block
 
 $(".bridge-name").on("click", function() {
   var bridgeTitle = $(this).text();
@@ -171,21 +149,14 @@ $(".bridge-name").on("click", function() {
 
 //reference bridge title in API call
 
-// function that adds alarms to the alarm history modal
-function alarmList() {
-  for (var i = 0; i < errorLog.length; i++) {
-
-    var errorLi = `<li>User: ${username} Error: ${historicErrorLogFBase[i]} </li>`;
-    console.log(errorLog[i]);
-    $("#alarm-list").append(errorLi);
-  }
-}
 
 //function to clear alarms if desired
 
 $("#clear-faults").on("click", function(){
     $("#alarm-list").empty();
-})
+});
+
+
 
 
 
