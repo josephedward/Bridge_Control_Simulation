@@ -14,7 +14,7 @@ testMode();
 });
 
 function testMode(){
-$("#log-screen").addClass("hidden");
+$("#login-screen").addClass("hidden");
 $("#active").removeClass("hidden");
 $("#reset").removeClass("hidden");
 }
