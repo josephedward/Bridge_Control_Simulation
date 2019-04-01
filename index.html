@@ -12,6 +12,9 @@
     defer></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.core.js"  defer></script>
+    <script src="assets/javascript/bridgecontrol.js" defer></script>
+    <script src="assets/javascript/firebase.js" defer></script>
 
     <title>Bridge Control Simulator</title>
     <!-- css reset -->
@@ -33,12 +36,14 @@
           Password
           <input type="password" id="password">
           <input type="submit" value="LOGIN" id="user-login">
+          <button type="button" class="btn btn-danger" id="testMode">Test Mode</button>
         </form>
+
       </div>
 </div>
 
       <!-- bridge screen -->
-      <div class="wrapper22 mx-auto hidden" id="active">      
+      <div class="wrapper22 mx-auto hidden " id="active">      
         <div class="row">
         <div class="col-4">
           <!-- dropdown buttons -->
@@ -123,7 +128,8 @@
 
           </ul>
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer" id="faultButtons">
+            <button type="button" class="btn btn-danger hidden" id="reset">Reset Firebase</button>
             <button type="button" class="btn btn-danger" id="fault-history">Historic Log</button>
             <button type="button" class="btn btn-danger" id="clear-faults">Clear Faults</button>
           <button type="button" class="btn btn-danger" data-dismiss="modal">Acknowledge Faults</button>
@@ -197,9 +203,9 @@
     <!-- moment.js -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <!--link API file-->
-    <script src="assets/javascript/api.js"></script>
+    <script src="assets/javascript/api.js" defer></script>
     <!-- custom js -->
-    <script src="assets/javascript/app.js"></script>
+    <script src="assets/javascript/app.js" defer></script>
   </body>
 </html>
 
