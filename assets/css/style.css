@@ -295,3 +295,23 @@ body {
   width: 110px;
   height: 110px;
 }
+
+
+/* compass info */
+
+
+/* .compass {
+  display: block;
+  height: 70px;
+  width: 70px;
+  border-radius: 100%;
+  background: white;
+  margin: 30px auto;
+ 
+
+} */
+
+#compass {
+  background: url("../images/white_leather/white_leather.png") ; 
+  background-size: cover;
+}

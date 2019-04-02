@@ -1,62 +1,33 @@
-$(document).ready(function() {
-});
+
+// //for testing
+// $(document).ready(function() {
+//   // bridgeExplodes();
+// });
     // runOpeningSequence();
 
     // checkFailureConditions();
    
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyC1kKG2iWXeLJ2kTQmk-UHfQTYYrGrmEfk",
-    authDomain: "group-project-bridgecontrol.firebaseapp.com",
-    databaseURL: "https://group-project-bridgecontrol.firebaseio.com",
-    projectId: "group-project-bridgecontrol",
-    storageBucket: "",
-    messagingSenderId: "206097633250"
-  };
-  firebase.initializeApp(config);
 
-var database=firebase.database();
+$("#testMode").on("click",function(){
+testMode();
 
-
-function pushFirebase(errorLog){
-database.ref().set({
-    username:username,
-    errorLog:errorLog,
-    dateAdded: firebase.database.ServerValue.TIMESTAMP
 });
+
+function testMode(){
+$("#login-screen").addClass("hidden");
+$("#active").removeClass("hidden");
+$("#reset").removeClass("hidden");
 }
 
-
-var historicErrorLogFBase;
-
-database.ref().on("value",function(fireLog){
-historicErrorLogFBase=fireLog.val().errorLog;
-});
-
-$("#fault-history").on("click",function(){
-    $("#alarm-list").empty();
-
-    for (var i = 0; i < historicErrorLogFBase.length; i++) {
-    var errorLi = `<li>User: ${username} Error: ${historicErrorLogFBase[i]} </li>`;
-    // console.log(errorLog[i]);
-    ;
-    $("#alarm-list").append(errorLi);
-    }
-});
-
-$("#reset").on("click", function(){
-
-    database.ref('/').set("reset.json");
-    location.reload();
-
-});
-
-
-
-$("#operate-button").on("click", function(){
+$("#operate-button").unbind("click").on("click", function(){
+    // $(this).toggleClass("released");
 console.log("opening");
     runOpeningSequence();
 });
+
+
+
+
 
 
 
@@ -81,7 +52,6 @@ function runOpeningSequence(){
         },2000);
     },2000);
 },2000); 
-  
 
  } 
 
@@ -98,9 +68,9 @@ function runOpeningSequence(){
       $switch1.attr("data-state", "open");
     } else {
 
-        //data state flip, text update
-      $switch1.text("SPAN LOCKS DRIVEN");
-      $switch1.attr("data-state", "closed");
+      //   //data state flip, text update
+      // $switch1.text("SPAN LOCKS DRIVEN");
+      // $switch1.attr("data-state", "closed");
     }
     }
 }
@@ -121,12 +91,11 @@ function runOpeningSequence(){
               $switch2.attr("data-state", "closed");
             }
           } else {
-            var currentDate = moment().format('lll');
-            errorLog.push( currentDate.toUpperCase() + " -  " + $(this).text() + " OUT OF SEQUENCE");
-            console.log(errorLog);
-            pushFirebase(errorLog);
-            $("#alarm-list").empty();
-            alarmList();
+            // var currentDate = moment().format('lll');
+            // errorLog.push( currentDate.toUpperCase() + " -  " + $(this).text() + " OUT OF SEQUENCE");
+            // console.log(errorLog);
+            // $("#alarm-list").empty();
+            // alarmList();
           }
 
     }
@@ -147,11 +116,11 @@ function runOpeningSequence(){
               $switch3.attr("data-state", "closed");
             }
           } else {
-            var currentDate = moment().format('lll');
-            errorLog.push( currentDate.toUpperCase() + " -  " + $(this).text() + " OUT OF SEQUENCE");
-            console.log(errorLog);
-            $("#alarm-list").empty();
-            alarmList();
+            // var currentDate = moment().format('lll');
+            // errorLog.push( currentDate.toUpperCase() + " -  " + $(this).text() + " OUT OF SEQUENCE");
+            // console.log(errorLog);
+            // $("#alarm-list").empty();
+            // alarmList();
           }
 
     }
@@ -173,12 +142,11 @@ function runOpeningSequence(){
               $switch4.attr("data-state", "closed");
             }
           } else {
-            var currentDate = moment().format('lll');
-            errorLog.push( currentDate.toUpperCase() + " -  " + $(this).text() + " OUT OF SEQUENCE");
-            console.log(errorLog);
-            pushFirebase(errorLog);
-            $("#alarm-list").empty();
-            alarmList();
+            // var currentDate = moment().format('lll');
+            // errorLog.push( currentDate.toUpperCase() + " -  " + $(this).text() + " OUT OF SEQUENCE");
+            // console.log(errorLog);
+            // $("#alarm-list").empty();
+            // alarmList();
           }
         
 
@@ -214,12 +182,11 @@ function runOpeningSequence(){
               transition = false;
             }
           } else {
-            var currentDate = moment().format('lll');
-            errorLog.push( currentDate.toUpperCase() + " -  " + $(this).text() + " OUT OF SEQUENCE");
-            console.log(errorLog);
-            pushFirebase(errorLog);
-            $("#alarm-list").empty();
-            alarmList();
+            // var currentDate = moment().format('lll');
+            // errorLog.push( currentDate.toUpperCase() + " -  " + $(this).text() + " OUT OF SEQUENCE");
+            // console.log(errorLog);
+            // $("#alarm-list").empty();
+            // alarmList();
           }
 
           
@@ -230,96 +197,39 @@ function runOpeningSequence(){
         $switch5.text("BRIDGE OPEN");
       transition = false;
         $switch5.toggleClass("transition");
+        $("#operate-button").css("background","yellow");
     }
 
-//     console.log($switch1.attr('data-state'));
-// if(
-//     ($switch1.attr('data-state')==="closed")&&
-//     ($switch2.attr('data-state')==="closed")&&
-//     ($switch3.attr('data-state')==="closed")&&
-//     ($switch4.attr('data-state')==="closed")&&
-//     ($switch5.attr('data-state')==="closed")
-//     )
-//     {
-//         console.log("Opening Switch 1");
-//      setInterval(function(){ $switch1.toggleClass("released");},2000);  
-//     }
-
-//     if(
-//         $switch1.attr('data-state')==="open"&&
-//         $switch2.attr('data-state')==="closed"&&
-//         $switch3.attr('data-state')==="closed"&&
-//         $switch4.attr('data-state')==="closed"&&
-//         $switch5.attr('data-state')==="closed"
-//         )
-//         {
-//             console.log("Opening Switch 2");
-//             setInterval(function(){ $switch2.toggleClass("released");},2000);       }
-
-//         if(
-//             $switch1.attr('data-state')==="open"&&
-//             $switch2.attr('data-state')==="open"&&
-//             $switch3.attr('data-state')==="closed"&&
-//             $switch4.attr('data-state')==="closed"&&
-//             $switch5.attr('data-state')==="closed"
-//             )
-//             {
-//                 console.log("Opening Switch 3");
-//                 setInterval(function(){ $switch3.toggleClass("released");},2000);            
-//             }
-//             if(
-//                 $switch1.attr('data-state')==="open"&&
-//                 $switch2.attr('data-state')==="open"&&
-//                 $switch3.attr('data-state')==="open"&&
-//                 $switch4.attr('data-state')==="closed"&&
-//                 $switch5.attr('data-state')==="closed"
-//                 )
-//                 {
-//                     console.log("Opening Switch 4");
-//                     setInterval(function(){ $switch4.toggleClass("released");},2000);
-//                 }
-//                 if(
-//                     $switch1.attr('data-state')==="open"&&
-//                     $switch2.attr('data-state')==="open"&&
-//                     $switch3.attr('data-state')==="open"&&
-//                     $switch4.attr('data-state')==="open"&&
-//                     $switch5.attr('data-state')==="closed"
-//                     )
-//                     {
-//                         console.log("Opening Switch 5");
-//                         setInterval(function(){ $switch5.toggleClass("released");},2000);
-//                     }
-
-// if($switch5.attr('data-state')==="transition-open")
-// {
-//     playOpen();
-// }
-
-
-
-
-function checkFailureConditions(){
-    $switch1.attr("data-state","open");
-    $switch5.attr("data-state","open");
-    var switchArr  =[$switch1,$switch2,$switch3,$switch4,$swich5];
-for (x=0;x<switchArr.length;x++)
-{
-    if((switchArr[x].getAttrDataState==="open")&&(switchArr[x-1].getAttrDataState==="closed"))
-    {
-     bridgeExplodes();   
-    }
-}
-
-}
 
 function bridgeExplodes()
 {
-    console.log("bridge explodes");
-    $("#canvas").empty();
-    $("#canvas").append("<iframe src='https://giphy.com/embed/12KiGLydHEdak8' width='616px' height='304px' frameBorder='0' class='giphy-embed' allowFullScreen></iframe>");
-    //wait some time then put canvas back
-    setTimeout(function(){$("#canvas").append("<canvas></canvas>");}, 3000);
+
+    var path="http://api.giphy.com/v1/gifs/E1q0A3MWQ98I0?api_key=6aJGcOZM6D5TfU3Ptk0Hkim49Je9DsJv";
+    var apiKey   = "6aJGcOZM6D5TfU3Ptk0Hkim49Je9DsJv";
+
+
+    $.ajax({
+      url: path,
+      type: 'GET',
+    })
+    .done(function(response) {
+      console.log(response);
+    });
+
+
+
+
+    // var opened = window.open("");
+    // opened.document.write(`<html><head><title></title></head><img src='${response.images.original.url}'></img><body>test</body></html>`);
+        // console.log("bridge explodes");
+    // $("#canvas").empty();
+    // $("#canvas").append("<iframe src='https://giphy.com/embed/12KiGLydHEdak8' width='616px' height='304px' frameBorder='0' class='giphy-embed' allowFullScreen></iframe>");
+    // //wait some time then put canvas back
+    // setTimeout(function(){$("#canvas").append("<canvas></canvas>");}, 3000);
 }
+
+
+
 
 
 //algorithm success
@@ -357,3 +267,48 @@ stack if statements inside of else if where any situation that mimics the scenar
 returns the error and resets all data states to closed.
 
 */
+
+// // (username, errorLog
+// function updateFirebase(){
+// //   historicErrorLog.push({
+// //     "username":username,
+// //     "errorLog":errorLog,
+// //     "dateAdded": firebase.database.ServerValue.TIMESTAMP
+
+// //   });
+
+//   database.ref("historicErrorLog/").update({
+//     // username:username,
+//     errorLog:username +errorLog
+//     // dateAdded: firebase.database.ServerValue.TIMESTAMP
+//   });
+// }
+
+// var historicErrorLog=firebase.database().ref("historicErrorLog/");
+
+// historicErrorLog.orderByKey().on("child_added", function(data) {
+//   console.log(data.key.errorLog);
+// });
+
+// database.ref().on("value",function(fireLog){
+//   // console.log(fireLog.val().historicErrorLog);
+//   historicErrorLog=fireLog.val()
+//   // .historicErrorLog;
+  
+//   });
+// // .ref("historicErrorLog/");
+
+
+// $("#fault-history").on("click",function(){
+//   console.log(historicErrorLog.length);
+//   //   $("#alarm-list").empty();
+//   //   historicErrorLog=database.ref().val();
+//   //   // .GetValueAsync();
+
+//   //   for (var i = 0; i < historicErrorLog.length; i++) {
+//   // console.log(historicErrorLog[i]);
+//   //   // var historicLi = `<li> ${historicErrorLogFBase[i]} </li>`;
+//   //   // console.log(errorLog[i]);
+//     // $("#alarm-list").append(historicErrorLog[i]);
+//     // }
+// });
