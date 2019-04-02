@@ -136,7 +136,9 @@ function runOpeningSequence(){
               $switch4.attr("data-state") === "closed"
             ) {
               $switch4.text("MACHINERY BRAKES RELEASED");
+              $switch4.css("font-size","15px");
               $switch4.attr("data-state", "open");
+              
             } else {
               $switch4.text("MACHINERY BRAKES SET");
               $switch4.attr("data-state", "closed");
