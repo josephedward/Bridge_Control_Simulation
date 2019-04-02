@@ -10,22 +10,44 @@ var titleCase = function(str) {
   return result.join(" ");
 };
 
+var intervalID;
+
 // displays the current time based on the which bridge is selected
 $(document).on("click", ".bridge-name", function displayTime() {
   var timezone = $(this).attr("data-type");
   var timeQueryURL = "http://worldclockapi.com/api/json/" + timezone + "/now";
 
+
   $.ajax({
     url: timeQueryURL,
     method: "GET"
   }).then(function(response) {
-    var utcOffset = response.utcOffset;
 
-    var currentBridgeTime = moment()
-      .utcOffset(utcOffset)
-      .format("hh:mm A");
+    console.log(response);
 
-    console.log(currentBridgeTime);
+    function runTimer(tz) {
+      clearInterval(intervalID);
+      intervalID = setInterval(function updateTime() {
+        $(".clock").text(
+          moment()
+            .tz(tz)
+            .format("HH:mm:ss")
+        );
+      }, 1000);
+    };
+
+
+    var timeZoneName = response.timeZoneName;
+
+    console.log(timeZoneName);
+//changes the moment.tz timezone for the clock based on which bridge was selected
+    if (timeZoneName === "Eastern Standard Time") {
+      runTimer("America/New_York");
+    } else if (timeZoneName === "Central Standard Time") {
+      runTimer("America/Chicago");
+    } else if (timeZoneName === "Pacific Standard Time") {
+      runTimer("America/Los_Angeles");
+    }
   });
 });
 
@@ -48,7 +70,7 @@ $(document).on("click", ".bridge-name", function displayWeather() {
     var humidity = response.main.humidity;
     var conditions = response.weather[0].description;
     var windSpeed = Math.round(response.wind.speed);
-    var windDegress = response.wind.deg;
+    var windDegress = Math.round(response.wind.deg);
 
     // takes the windDegrees number and equates that to a direction that will display after the degree number
     function degToCompass(num) {

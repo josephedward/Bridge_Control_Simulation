@@ -8,6 +8,7 @@
   margin: 3px;
 }
 
+
 .container {
   margin-top: 50px;
   width: 960px !important;
@@ -233,6 +234,31 @@ body {
 
 }
 
+.clock-content {
+  background: rgb(51,51,51);
+  width: 215px;
+  height: 222px;
+  margin-top: 10px;
+  padding: 0px;
+  border-top-left-radius: 3px;
+  color: white;
+}
+
+
+.clock-title {
+  padding-top: 23px;
+}
+
+.clock {
+  margin-left: auto;
+  margin-right: auto;
+  background: lightgrey;
+  font-size: 32px;
+  padding: 4px;
+  margin-bottom: auto;
+  color: black;
+  border: 1px solid black;
+}
 
 
 .weather-title {
