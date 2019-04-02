@@ -180,6 +180,7 @@ function runOpeningSequence(){
               $switch5.text("BRIDGE CLOSED");
               $switch5.toggleClass("transition");
               transition = false;
+
             }
           } else {
             // var currentDate = moment().format('lll');
@@ -197,6 +198,7 @@ function runOpeningSequence(){
         $switch5.text("BRIDGE OPEN");
       transition = false;
         $switch5.toggleClass("transition");
+        $switch5.css("background","yellow");
         $("#operate-button").css("background","yellow");
     }
 
