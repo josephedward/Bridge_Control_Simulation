@@ -312,3 +312,4 @@ returns the error and resets all data states to closed.
 //     // $("#alarm-list").append(historicErrorLog[i]);
 //     // }
 // });
+
