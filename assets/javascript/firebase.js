@@ -1,11 +1,11 @@
 // Initialize Firebase
 var config = {
-  apiKey: "AIzaSyC1kKG2iWXeLJ2kTQmk-UHfQTYYrGrmEfk",
-  authDomain: "group-project-bridgecontrol.firebaseapp.com",
-  databaseURL: "https://group-project-bridgecontrol.firebaseio.com",
-  projectId: "group-project-bridgecontrol",
-  storageBucket: "",
-  messagingSenderId: "206097633250"
+ apiKey: "AIzaSyC1kKG2iWXeLJ2kTQmk-UHfQTYYrGrmEfk",
+ authDomain: "group-project-bridgecontrol.firebaseapp.com",
+ databaseURL: "https://group-project-bridgecontrol.firebaseio.com",
+ projectId: "group-project-bridgecontrol",
+ storageBucket: "",
+ messagingSenderId: "206097633250"
 };
 
 firebase.initializeApp(config);
@@ -16,64 +16,64 @@ var rootRef = firebase.database().ref();
 var snapArr;
 // Attach an asynchronous callback to read the data at our posts referencer
 rootRef.on(
-  "value",
-  function(snapshot) {
-    snapArr = _.toArray(snapshot.val());
-    console.log(snapArr);
-   
-  },
-  function(errorObject) {
-    console.log("The read failed: " + errorObject.code);
-  }
+ "value",
+ function(snapshot) {
+   snapArr = _.toArray(snapshot.val());
+   console.log(snapArr);
+
+ },
+ function(errorObject) {
+   console.log("The read failed: " + errorObject.code);
+ }
 );
 
 // // var historyLog=database.ref('historyLog/');
 function pushFirebase(errorItem) {
-  // Code for the push
-  database.ref().push({
-    errorItem: errorItem
-  });
+ // Code for the push
+ database.ref().push({
+   errorItem: errorItem
+ });
 
 
-    }
+   }
 
 
-    // function that adds alarms to the alarm history modal
+   // function that adds alarms to the alarm history modal
 function alarmList(switchNum) {
-    var currentDate = moment().format('lll');
-    errorItem= currentDate.toUpperCase() + " - User: "+username+" - Fault:"+ $(switchNum).text() + "OUT OF SEQUENCE";
-    var errorLi = `<li>${errorItem}</li>`;
-    pushFirebase(errorLi);
-    errorLog.push(errorLi);
-    
-    $("#alarm-list").empty();  
-    for (var i = 0; i < errorLog.length; i++) {
-      $("#alarm-list").append(errorLog[i]);
-    }
-    
-    }
+   var currentDate = moment().format('lll');
+   errorItem= currentDate.toUpperCase() + " - User: "+username+" - Fault:"+ $(switchNum).text() + "OUT OF SEQUENCE";
+   var errorLi = `<li>${errorItem}</li>`;
+   pushFirebase(errorLi);
+   errorLog.push(errorLi);
 
-    $("#fault-history").on("click",function(event){
-        event.preventDefault();
-        console.log(snapArr.length);
-        $("#alarm-list").empty();
-        for(x=0;x<snapArr.length;x++)
-        {
-        $("#alarm-list").append(snapArr[x].errorItem);
-      }
-      });
-      
-      
-      
+   $("#alarm-list").empty();
+   for (var i = 0; i < errorLog.length; i++) {
+     $("#alarm-list").append(errorLog[i]);
+   }
+
+   }
+
+   $("#fault-history").on("click",function(event){
+       event.preventDefault();
+       console.log(snapArr.length);
+       $("#alarm-list").empty();
+       for(x=0;x<snapArr.length;x++)
+       {
+       $("#alarm-list").append(snapArr[x].errorItem);
+     }
+     });
+
+
+
 
 
 
 
 
 $("#reset").on("click", function() {
-  database.ref("/").set("reset.json");
-  database.ref("/").remove();
-  location.reload();
+ database.ref("/").set("reset.json");
+ database.ref("/").remove();
+ location.reload();
 });
 
 
@@ -81,21 +81,21 @@ $("#reset").on("click", function() {
 
 //**************************************************************************************************************************** */
 
- // console.log(snapArr.length);
-    // for (x = 0; x < snapArr.length; x++) {
-    //     if(!allLog.includes(snapArr[x].errorLog))
-    //     {
-    //   allLog.push(snapArr[x].errorLog);
-    // }
-    // }
-    // // allLog=allLog[allLog.length-1];
-    // // .errorLog;
-    // // console.log(allLog.length);
-    // for (x = 0; x < allLog.length; x++) {
-    //   console.log(allLog[x]);
-    // }
-    // //   console.log(_.toArray(snapshot.val())[0].errorLog);
-    //   console.log(snapshot.val());
+// console.log(snapArr.length);
+   // for (x = 0; x < snapArr.length; x++) {
+   //     if(!allLog.includes(snapArr[x].errorLog))
+   //     {
+   //   allLog.push(snapArr[x].errorLog);
+   // }
+   // }
+   // // allLog=allLog[allLog.length-1];
+   // // .errorLog;
+   // // console.log(allLog.length);
+   // for (x = 0; x < allLog.length; x++) {
+   //   console.log(allLog[x]);
+   // }
+   // //   console.log(_.toArray(snapshot.val())[0].errorLog);
+   //   console.log(snapshot.val());
 
 //Outmoded
 // Get a database reference to our posts
