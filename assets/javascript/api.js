@@ -23,8 +23,6 @@ $(document).on("click", ".bridge-name", function displayTime() {
     method: "GET"
   }).then(function(response) {
 
-    console.log(response);
-
     function runTimer(tz) {
       clearInterval(intervalID);
       intervalID = setInterval(function updateTime() {
@@ -38,8 +36,6 @@ $(document).on("click", ".bridge-name", function displayTime() {
 
 
     var timeZoneName = response.timeZoneName;
-
-    console.log(timeZoneName);
 //changes the moment.tz timezone for the clock based on which bridge was selected
     if (timeZoneName === "Eastern Standard Time") {
       runTimer("America/New_York");
@@ -59,12 +55,11 @@ $(document).on("click", ".bridge-name", function displayWeather() {
     coord +
     "&units=imperial&APPID=5adeb498269cc58939e872c2a5c2c0a2";
 
-  console.log(coord);
   $.ajax({
     url: weatherQueryURL,
     method: "GET"
   }).then(function(response) {
-    console.log(response);
+
 
     var temp = Math.round(response.main.temp);
     var humidity = response.main.humidity;
