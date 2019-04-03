@@ -25,7 +25,30 @@ console.log("opening");
     runOpeningSequence();
 });
 
-
+function closeSwitches()
+{
+          //data state flip, text update
+          $("#operate-button").css("background-color","rgb(68, 206, 68)");
+          $switch1.text("SPAN LOCKS DRIVEN");
+          $switch1.attr("data-state", "closed");
+          $switch1.css("background-color","rgb(68, 206, 68)");
+          
+          $switch2.text("TAIL LOCKS DRIVEN");
+        $switch2.attr("data-state", "closed");
+        $switch2.css("background-color","rgb(68, 206, 68)");
+        $switch3.text("MOTOR BRAKES SET");
+        $switch3.attr("data-state", "closed");
+        $switch3.css("background-color","rgb(68, 206, 68)");
+        $switch4.text("MACHINERY BRAKES SET");
+        $switch4.attr("data-state", "closed");
+        $switch4.css("background-color","rgb(68, 206, 68)");
+        $switch5.attr("data-state", "closed");
+        $switch5.text("BRIDGE CLOSED");
+        // $switch5.toggleClass("transition");
+        $switch5.css("background-color","rgb(68, 206, 68)");
+        transition = false;
+       
+}
 
 
 
