@@ -185,6 +185,7 @@ function runOpeningSequence(){
               $switch5.text().trim() === "BRIDGE OPEN"
             ) {
               $switch5.text("BRIDGE MOVING");
+              animateBridgeOpen();
               $switch5.toggleClass("released");
               $switch5.toggleClass("transition");
               transition = true;
@@ -197,6 +198,7 @@ function runOpeningSequence(){
               $switch5.text("BRIDGE OPEN");
             transition = false;
               $switch5.toggleClass("transition");
+              animateBridgeClose();
             } else if (
               $switch5.text().trim() === "BRIDGE MOVING" &&
               $switch5.attr("data-state") === "open"
@@ -221,7 +223,7 @@ function runOpeningSequence(){
     function finishTransition(){
         $switch5.attr("data-state", "open");
         $switch5.text("BRIDGE OPEN");
-      transition = false;
+        transition = false;
         $switch5.toggleClass("transition");
         $switch5.css("background","yellow");
         $("#operate-button").css("background","yellow");
@@ -339,4 +341,6 @@ returns the error and resets all data states to closed.
 //     // $("#alarm-list").append(historicErrorLog[i]);
 //     // }
 // });
+
+
 
