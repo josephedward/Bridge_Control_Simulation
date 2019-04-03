@@ -23,7 +23,7 @@
     <!-- custom css -->
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body>
+	<body onload='init();'>
     <div class="container text-center">
       <!-- log in screen -->
       <div class="wrapper22 mx-auto hidden" id="login-screen">
@@ -162,11 +162,10 @@
                     <div class="wind-direction-box-title">Wind Direction</div>
                   <div id="windDegrees-display" class="wind-direction-box">
                     
-                    
-                      <canvas id="compass" height=110 width=110></canvas>
-                    
-                    
                     </div>
+                  
+                    <canvas id="compass" height=110 width=110></canvas>
+                    
                   </div>
                 </div>
               </div>
@@ -228,7 +227,8 @@
     <script src="assets/javascript/api.js"></script>
     <!-- custom js -->
     <script src="assets/javascript/app.js"></script>
-
+    <!--compass-->
+    <script src="assets/javascript/compass.js"></script>
     <!--bridgecontrol-->
     <script src="assets/javascript/bridgecontrol.js"></script>
     <!--Bridge Animation-->

@@ -65,7 +65,7 @@ $(document).on("click", ".bridge-name", function displayWeather() {
     var humidity = response.main.humidity;
     var conditions = response.weather[0].description;
     var windSpeed = Math.round(response.wind.speed);
-    var windDegress = Math.round(response.wind.deg);
+    var windDegrees = Math.round(response.wind.deg);
 
     // takes the windDegrees number and equates that to a direction that will display after the degree number
     function degToCompass(num) {
@@ -98,13 +98,14 @@ $(document).on("click", ".bridge-name", function displayWeather() {
     $("#conditions-display").text(`${conditionsUppercase}`);
     $("#windSpeed-display").text(`${windSpeed}mph`);
     $("#windDegrees-display").text(
-      `${windDegress}°${degToCompass(windDegress)}`
+      `${windDegrees}°${degToCompass(windDegrees)}`
     );
+    degrees=windDegrees;
 
     console.log(temp);
     console.log(humidity);
     console.log(conditions);
     console.log(windSpeed);
-    console.log(windDegress);
+    console.log(windDegrees);
   });
 });
