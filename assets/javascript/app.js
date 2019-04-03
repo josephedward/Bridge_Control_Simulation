@@ -143,6 +143,7 @@ $switch5.on("click", function() {
 //grab bridgethis selection and put title in bridge title block
 
 $(".bridge-name").on("click", function() {
+ closeSwitches();
   var bridgeTitle = $(this).text();
   $("#bridge-title").text(bridgeTitle);
   $("#bridge-select").text(bridgeTitle);
