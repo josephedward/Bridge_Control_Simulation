@@ -1,3 +1,8 @@
+@font-face{
+  font-family:'digital-clock-font';
+  src: url('../fonts/digital-7.ttf');
+ }
+
 .operation-button {
   width: 300px;
   border: 1px solid darkgreen;
@@ -253,10 +258,15 @@ body {
   margin-left: auto;
   margin-right: auto;
   background: lightgrey;
-  font-size: 32px;
+  width: 175px;
+  font-family: 'digital-clock-font';
+  font-size: 40px;
   padding: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
   margin-bottom: auto;
   color: black;
+  box-shadow: inset 0 0 10px #000000;
   border: 1px solid black;
 }
 
@@ -280,6 +290,7 @@ body {
   color: black;
   width: 125px;
   height: 35px;
+  box-shadow: inset 0 0 10px #000000;
 }
 
 .wind-direction-box-title {
