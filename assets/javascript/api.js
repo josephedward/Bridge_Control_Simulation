@@ -63,7 +63,7 @@ $(document).on("click", ".bridge-name", function displayWeather() {
 
     var temp = Math.round(response.main.temp);
     var humidity = response.main.humidity;
-    var conditions = response.weather[0].description;
+    var conditions = response.weather[0].main;
     var windSpeed = Math.round(response.wind.speed);
     var windDegress = Math.round(response.wind.deg);
 
@@ -97,9 +97,13 @@ $(document).on("click", ".bridge-name", function displayWeather() {
     $("#humidity-display").text(`${humidity}%`);
     $("#conditions-display").text(`${conditionsUppercase}`);
     $("#windSpeed-display").text(`${windSpeed}mph`);
+    if (isNaN(windDegrees) === true || windDegrees == null){
+      $("#windDegrees-display").text("No Data")
+    } else {
     $("#windDegrees-display").text(
-      `${windDegress}°${degToCompass(windDegress)}`
+      `${windDegrees}°${degToCompass(windDegrees)}`
     );
+  }
 
     console.log(temp);
     console.log(humidity);
