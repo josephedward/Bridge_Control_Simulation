@@ -1,8 +1,12 @@
 // Global variable
 var img = null,
 	needle = null,
-	ctx = null,
-	degrees = windDegrees;
+	ctx = null
+	degrees = null;
+
+
+degrees=windDegrees;
+
 
 function clearCanvas() {
 	 // clear canvas
