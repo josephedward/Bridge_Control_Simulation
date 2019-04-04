@@ -94,6 +94,7 @@ $switch4.on("click", function() {
       $switch4.attr("data-state") === "closed"
     ) {
       $switch4.text("MACHINERY BRAKES RELEASED");
+      $switch4.css("font-size","15px");
       $switch4.attr("data-state", "open");
     } else {
       $switch4.text("MACHINERY BRAKES SET");
@@ -142,6 +143,7 @@ $switch5.on("click", function() {
 //grab bridgethis selection and put title in bridge title block
 
 $(".bridge-name").on("click", function() {
+ closeSwitches();
   var bridgeTitle = $(this).text();
   $("#bridge-title").text(bridgeTitle);
   $("#bridge-select").text(bridgeTitle);

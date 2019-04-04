@@ -25,7 +25,30 @@ console.log("opening");
     runOpeningSequence();
 });
 
-
+function closeSwitches()
+{
+          //data state flip, text update
+          $("#operate-button").css("background-color","rgb(68, 206, 68)");
+          $switch1.text("SPAN LOCKS DRIVEN");
+          $switch1.attr("data-state", "closed");
+          $switch1.css("background-color","rgb(68, 206, 68)");
+          
+          $switch2.text("TAIL LOCKS DRIVEN");
+        $switch2.attr("data-state", "closed");
+        $switch2.css("background-color","rgb(68, 206, 68)");
+        $switch3.text("MOTOR BRAKES SET");
+        $switch3.attr("data-state", "closed");
+        $switch3.css("background-color","rgb(68, 206, 68)");
+        $switch4.text("MACHINERY BRAKES SET");
+        $switch4.attr("data-state", "closed");
+        $switch4.css("background-color","rgb(68, 206, 68)");
+        $switch5.attr("data-state", "closed");
+        $switch5.text("BRIDGE CLOSED");
+        // $switch5.toggleClass("transition");
+        $switch5.css("background-color","rgb(68, 206, 68)");
+        transition = false;
+       
+}
 
 
 
@@ -136,7 +159,9 @@ function runOpeningSequence(){
               $switch4.attr("data-state") === "closed"
             ) {
               $switch4.text("MACHINERY BRAKES RELEASED");
+              $switch4.css("font-size","15px");
               $switch4.attr("data-state", "open");
+              
             } else {
               $switch4.text("MACHINERY BRAKES SET");
               $switch4.attr("data-state", "closed");
@@ -160,6 +185,7 @@ function runOpeningSequence(){
               $switch5.text().trim() === "BRIDGE OPEN"
             ) {
               $switch5.text("BRIDGE MOVING");
+              animateBridgeOpen();
               $switch5.toggleClass("released");
               $switch5.toggleClass("transition");
               transition = true;
@@ -172,6 +198,7 @@ function runOpeningSequence(){
               $switch5.text("BRIDGE OPEN");
             transition = false;
               $switch5.toggleClass("transition");
+              animateBridgeClose();
             } else if (
               $switch5.text().trim() === "BRIDGE MOVING" &&
               $switch5.attr("data-state") === "open"
@@ -180,6 +207,7 @@ function runOpeningSequence(){
               $switch5.text("BRIDGE CLOSED");
               $switch5.toggleClass("transition");
               transition = false;
+
             }
           } else {
             // var currentDate = moment().format('lll');
@@ -195,8 +223,9 @@ function runOpeningSequence(){
     function finishTransition(){
         $switch5.attr("data-state", "open");
         $switch5.text("BRIDGE OPEN");
-      transition = false;
+        transition = false;
         $switch5.toggleClass("transition");
+        $switch5.css("background","yellow");
         $("#operate-button").css("background","yellow");
     }
 
@@ -312,3 +341,6 @@ returns the error and resets all data states to closed.
 //     // $("#alarm-list").append(historicErrorLog[i]);
 //     // }
 // });
+
+
+

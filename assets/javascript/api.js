@@ -15,15 +15,13 @@ var intervalID;
 // displays the current time based on the which bridge is selected
 $(document).on("click", ".bridge-name", function displayTime() {
   var timezone = $(this).attr("data-type");
-  var timeQueryURL = "http://worldclockapi.com/api/json/" + timezone + "/now";
+  var timeQueryURL = "https://worldclockapi.com/api/json/" + timezone + "/now";
 
 
   $.ajax({
     url: timeQueryURL,
     method: "GET"
   }).then(function(response) {
-
-    console.log(response);
 
     function runTimer(tz) {
       clearInterval(intervalID);
@@ -38,8 +36,6 @@ $(document).on("click", ".bridge-name", function displayTime() {
 
 
     var timeZoneName = response.timeZoneName;
-
-    console.log(timeZoneName);
 //changes the moment.tz timezone for the clock based on which bridge was selected
     if (timeZoneName === "Eastern Standard Time") {
       runTimer("America/New_York");
@@ -55,22 +51,21 @@ $(document).on("click", ".bridge-name", function displayTime() {
 $(document).on("click", ".bridge-name", function displayWeather() {
   var coord = $(this).attr("data-coord");
   var weatherQueryURL =
-    "http://api.openweathermap.org/data/2.5/weather?" +
+    "https://api.openweathermap.org/data/2.5/weather?" +
     coord +
     "&units=imperial&APPID=5adeb498269cc58939e872c2a5c2c0a2";
 
-  console.log(coord);
   $.ajax({
     url: weatherQueryURL,
     method: "GET"
   }).then(function(response) {
-    console.log(response);
+
 
     var temp = Math.round(response.main.temp);
     var humidity = response.main.humidity;
     var conditions = response.weather[0].description;
     var windSpeed = Math.round(response.wind.speed);
-    var windDegress = Math.round(response.wind.deg);
+    var windDegrees = Math.round(response.wind.deg);
 
     // takes the windDegrees number and equates that to a direction that will display after the degree number
     function degToCompass(num) {
@@ -103,13 +98,14 @@ $(document).on("click", ".bridge-name", function displayWeather() {
     $("#conditions-display").text(`${conditionsUppercase}`);
     $("#windSpeed-display").text(`${windSpeed}mph`);
     $("#windDegrees-display").text(
-      `${windDegress}°${degToCompass(windDegress)}`
+      `${windDegrees}°${degToCompass(windDegrees)}`
     );
+    degrees=windDegrees;
 
     console.log(temp);
     console.log(humidity);
     console.log(conditions);
     console.log(windSpeed);
-    console.log(windDegress);
+    console.log(windDegrees);
   });
 });

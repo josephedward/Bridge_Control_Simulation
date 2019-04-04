@@ -4,14 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js" defer></script>
     <script
     src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"
     defer></script>
-    <script src="assets/javascript/bridgecontrol.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js" defer></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.core.js"  defer></script>
+    <!--firebase script-->
+    <script src="assets/javascript/firebase.js" defer></script>
+<!--link API file-->
+<script src="assets/javascript/api.js" defer></script>      
 
     <title>Bridge Control Simulator</title>
     <!-- css reset -->
@@ -21,7 +25,7 @@
     <!-- custom css -->
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body>
+	<body onload='init();'>
     <div class="container text-center">
       <!-- log in screen -->
       <div class="wrapper22 mx-auto hidden" id="login-screen">
@@ -61,7 +65,7 @@
             <button class="btn dropdown-button bridge-name" id="bridge-2" data-type="est" data-coord="lat=37.53&lon=-77.42">Kanawha Canal</button><br />
             <button class="btn dropdown-button bridge-name" id="bridge-3" data-type="cst" data-coord="lat=30.37&lon=-88.56">Pascagoula</button><br />
             <button class="btn dropdown-button bridge-name" id="bridge-4" data-type="est" data-coord="lat=26.72&lon=-80.05">Flagler Memorial</button><br />
-            <button class="btn dropdown-button bridge-name" id="bridge-5" data-type="est" data-coord="lat=29.89&lon=-81.31">Henry Ford</button><br />
+            <button class="btn dropdown-button bridge-name" id="bridge-5" data-type="pst" data-coord="lat=33.77&lon=-118.24">Henry Ford</button><br />
             <button class="btn dropdown-button bridge-name" id="bridge-6" data-type="est" data-coord="lat=38.36&lon=-76.99">Harry Nice</button><br />
           </div>
 
@@ -160,11 +164,10 @@
                     <div class="wind-direction-box-title">Wind Direction</div>
                   <div id="windDegrees-display" class="wind-direction-box">
                     
-                    
-                      <canvas id="compass" height=110 width=110></canvas>
-                    
-                    
                     </div>
+                  
+                    <canvas id="compass" height=110 width=110></canvas>
+                    
                   </div>
                 </div>
               </div>
@@ -189,7 +192,7 @@
           </div>
           <div class="row">
             <div class="col-12">
-              <div id="canvas"> <img src="assets/images/bridge-open.jpg" id="bridge-image">
+              <div id="canvas"> <img src="assets/images/Bridge1.JPG" id="bridge-image">
               </div>
             </div>
           </div>
@@ -216,20 +219,23 @@
 
 
 
-    <!-- jquery cdn -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <!-- moment.js -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.23/moment-timezone-with-data.min.js"></script>
-    <!--firebase CDN-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.core.js"  defer></script>
-    <!--link API file-->
-    <script src="assets/javascript/api.js"></script>
+  
     <!-- custom js -->
     <script src="assets/javascript/app.js"></script>
-    <!--firebase script-->
-    <script src="assets/javascript/firebase.js"></script>
+
+<!--compass-->
+<script src="assets/javascript/compass.js" async></script>    
     <!--bridgecontrol-->
     <script src="assets/javascript/bridgecontrol.js"></script>
+    <!--Bridge Animation-->
+    <script src="assets/javascript/bridgeAnimation.js"></script>
+
+
+
+
   </body>
 </html>
