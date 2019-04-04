@@ -15,7 +15,7 @@ var intervalID;
 // displays the current time based on the which bridge is selected
 $(document).on("click", ".bridge-name", function displayTime() {
   var timezone = $(this).attr("data-type");
-  var timeQueryURL = "http://worldclockapi.com/api/json/" + timezone + "/now";
+  var timeQueryURL = "https://worldclockapi.com/api/json/" + timezone + "/now";
 
 
   $.ajax({
@@ -51,7 +51,7 @@ $(document).on("click", ".bridge-name", function displayTime() {
 $(document).on("click", ".bridge-name", function displayWeather() {
   var coord = $(this).attr("data-coord");
   var weatherQueryURL =
-    "http://api.openweathermap.org/data/2.5/weather?" +
+    "https://api.openweathermap.org/data/2.5/weather?" +
     coord +
     "&units=imperial&APPID=5adeb498269cc58939e872c2a5c2c0a2";
 
