@@ -258,6 +258,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   background: lightgrey;
+  text-align: left;
   width: 175px;
   font-family: 'digital-clock-font';
   font-size: 40px;
