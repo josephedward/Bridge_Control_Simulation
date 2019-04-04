@@ -5,7 +5,7 @@ var img = null,
 	degrees = null;
 
 
-degrees=windDegrees;
+// degrees=windDegrees;
 
 
 function clearCanvas() {
