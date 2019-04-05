@@ -18,6 +18,11 @@ body {
     border-bottom: 2px solid #cccccc;
   }
 
+  #logo {
+  font-size: 20px;
+
+  }
+
 
 .container-fluid {
 
@@ -116,9 +121,24 @@ nav {
   opacity: .7; 
   border-radius: 15px; 
   border-block-end-width: 5px;
-  width: 280px;
-  
  
+ 
+  }
+
+  .card {
+    background: rgb(223, 216, 216);
+    opacity: .7; 
+    border-radius: 15px; 
+    border-block-end-width: 5px;
+    margin-right: 7px;
+  }
+
+  #last-card {
+    background: rgb(223, 216, 216);
+    opacity: .7; 
+    border-radius: 15px; 
+    border-block-end-width: 5px;
+
   }
 
  
