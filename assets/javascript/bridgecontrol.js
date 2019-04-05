@@ -48,11 +48,11 @@ function runOpeningSequence() {
             //BRIDGE OPENING ANIMATION PLAYS
             spanOpen();
             setTimeout(function() {
-              //WTF DOES THIS DO???
+              //
               spanStop();
               openSwitches();
               isRunning = false;
-              //WTF TIMER
+              //
             }, 1250);
             //BRIDGE OPENING TIMER
           }, 1000);
