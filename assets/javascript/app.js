@@ -181,7 +181,6 @@ if ($("#username").val().trim() === "") {
 
 
 function closeSwitches () {
-
   $switch1.attr("data-state", "closed");
   $switch1.attr("class", "btn btn-success operation-button");
   $switch2.attr("data-state", "closed");
@@ -192,11 +191,23 @@ function closeSwitches () {
   $switch4.attr("class", "btn btn-success operation-button");
   $switch5.attr("data-state", "closed");
   $switch5.attr("class", "btn btn-success operation-button");
-
-
 }
 
 
+
+
+function openSwitches () {
+  $switch1.attr("data-state", "open");
+  $switch1.attr("class", "btn btn-success operation-button released");
+  $switch2.attr("data-state", "open");
+  $switch2.attr("class", "btn btn-success operation-button released");
+  $switch3.attr("data-state", "open");
+  $switch3.attr("class", "btn btn-success operation-button released");
+  $switch4.attr("data-state", "open");
+  $switch4.attr("class", "btn btn-success operation-button released");
+  $switch5.attr("data-state", "open");
+  $switch5.attr("class", "btn btn-success operation-button released");
+}
 
 
 
