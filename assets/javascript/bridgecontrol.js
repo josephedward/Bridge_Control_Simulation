@@ -50,6 +50,7 @@ function runOpeningSequence() {
             setTimeout(function() {
               //WTF DOES THIS DO???
               spanStop();
+              openSwitches();
               isRunning = false;
               //WTF TIMER
             }, 1250);
@@ -78,41 +79,6 @@ function bridgeExplodes() {
     console.log(response);
   });
 }
-
-
-// // CLOSE BRIDGE FUNCTION
-// function runClosingSequence() {
-//   setTimeout(function() {
-//     //FIGURE OUT WHAT THIS IS
-//     spanMotion();
-//     setTimeout(function() {
-//       // RUN MACHINERY BRAKES
-//       machineryBrakes();
-//       setTimeout(function() {
-//         // RUN MOTOR BRAKES
-//         motorBrakes();
-//         setTimeout(function() {
-//           //RUN TAIL LOCKS
-//           tailLocks();
-//           setTimeout(function() {
-//             //RUN SPAN LOCKS
-//             spanLocks();
-//             setTimeout(function() {
-//               // WTF IS THIS
-//               spanStop();
-//               //WTF TIMER
-//             }, 1000);
-//             // SPAN LOCKS TIMER
-//           }, 1000);
-//           //TAIL LOCKS TIMER
-//         }, 1000);
-//         //MOTOR BRAKES TIMER
-//       }, 1000);
-//       // MACHINERY BRAKES TIMER
-//     }, 1000);
-//     //SPAN CLOSE TIMER????
-//   }, 1250);
-// }
 
 
 //SPAN LOCKS FUNCTION
@@ -225,6 +191,7 @@ function runClosingSequence() {
             tailLocks();
             setTimeout(function() {
               spanLocks();
+              closeSwitches();
               isRunning = false;
             }, 1000);
           }, 1000);
