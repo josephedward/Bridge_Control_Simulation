@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js" defer></script>
     <script
     src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -13,8 +12,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js" defer></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.core.js"  defer></script>
+    <!--firebase script-->
+    <script src="assets/javascript/firebase.js" defer></script>
+<!--link API file-->
+<script src="assets/javascript/api.js" defer></script>      
 
     <title>Bridge Control Simulator</title>
+    <link rel="icon" type="image/ico" href="assets/images/favicon-16x16.png">
     <!-- css reset -->
     <link rel="stylesheet" href="assets/css/reset.css" />
     <!-- bootstrap  -->
@@ -22,7 +26,7 @@
     <!-- custom css -->
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body>
+	<body onload='init();'>
     <div class="container text-center">
       <!-- log in screen -->
       <div class="wrapper22 mx-auto" id="login-screen">
@@ -161,11 +165,10 @@
                     <div class="wind-direction-box-title">Wind Direction</div>
                   <div id="windDegrees-display" class="wind-direction-box">
                     
-                    
-                      <canvas id="compass" height=110 width=110></canvas>
-                    
-                    
                     </div>
+                  
+                    <canvas id="compass" height=110 width=109></canvas>
+                    
                   </div>
                 </div>
               </div>
@@ -221,14 +224,12 @@
     <!-- moment.js -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.23/moment-timezone-with-data.min.js"></script>
-    <!--firebase CDN-->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.core.js"  defer></script> -->
-    <!--link API file-->
-    <script src="assets/javascript/api.js"></script>
+  
     <!-- custom js -->
     <script src="assets/javascript/app.js"></script>
-    <!--firebase script-->
-    <!-- <script src="assets/javascript/firebase.js"></script> -->
+
+<!--compass-->
+<script src="assets/javascript/compass.js" async></script>    
     <!--bridgecontrol-->
     <script src="assets/javascript/bridgecontrol.js"></script>
     <!--Bridge Animation-->

@@ -17,12 +17,10 @@ $(document).on("click", ".bridge-name", function displayTime() {
   var timezone = $(this).attr("data-type");
   var timeQueryURL = "http://worldclockapi.com/api/json/" + timezone + "/now";
 
-
   $.ajax({
     url: timeQueryURL,
     method: "GET"
   }).then(function(response) {
-
     function runTimer(tz) {
       clearInterval(intervalID);
       intervalID = setInterval(function updateTime() {
@@ -32,11 +30,10 @@ $(document).on("click", ".bridge-name", function displayTime() {
             .format("HH:mm:ss")
         );
       }, 1000);
-    };
-
+    }
 
     var timeZoneName = response.timeZoneName;
-//changes the moment.tz timezone for the clock based on which bridge was selected
+    //changes the moment.tz timezone for the clock based on which bridge was selected
     if (timeZoneName === "Eastern Standard Time") {
       runTimer("America/New_York");
     } else if (timeZoneName === "Central Standard Time") {
@@ -51,7 +48,7 @@ $(document).on("click", ".bridge-name", function displayTime() {
 $(document).on("click", ".bridge-name", function displayWeather() {
   var coord = $(this).attr("data-coord");
   var weatherQueryURL =
-    "http://api.openweathermap.org/data/2.5/weather?" +
+    "https://api.openweathermap.org/data/2.5/weather?" +
     coord +
     "&units=imperial&APPID=5adeb498269cc58939e872c2a5c2c0a2";
 
@@ -59,13 +56,11 @@ $(document).on("click", ".bridge-name", function displayWeather() {
     url: weatherQueryURL,
     method: "GET"
   }).then(function(response) {
-
-
     var temp = Math.round(response.main.temp);
     var humidity = response.main.humidity;
-    var conditions = response.weather[0].description;
+    var conditions = response.weather[0].main;
     var windSpeed = Math.round(response.wind.speed);
-    var windDegress = Math.round(response.wind.deg);
+    var windDegrees = Math.round(response.wind.deg);
 
     // takes the windDegrees number and equates that to a direction that will display after the degree number
     function degToCompass(num) {
@@ -97,14 +92,19 @@ $(document).on("click", ".bridge-name", function displayWeather() {
     $("#humidity-display").text(`${humidity}%`);
     $("#conditions-display").text(`${conditionsUppercase}`);
     $("#windSpeed-display").text(`${windSpeed}mph`);
-    $("#windDegrees-display").text(
-      `${windDegress}°${degToCompass(windDegress)}`
-    );
+    if (isNaN(windDegrees) === true || windDegrees == null) {
+      $("#windDegrees-display").text("No Data");
+    } else {
+      $("#windDegrees-display").text(
+        `${windDegrees}°${degToCompass(windDegrees)}`
+      );
+    }
+    degrees = windDegrees;
 
     console.log(temp);
     console.log(humidity);
     console.log(conditions);
     console.log(windSpeed);
-    console.log(windDegress);
+    console.log(windDegrees);
   });
 });
