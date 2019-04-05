@@ -1,242 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"
-    defer></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+    <title>Document</title>
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js" defer></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.core.js"  defer></script>
-    <!--firebase script-->
-    <script src="assets/javascript/firebase.js" defer></script>
-<!--link API file-->
-<script src="assets/javascript/api.js" defer></script>      
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"
+        defer></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
 
     <title>Bridge Control Simulator</title>
-    <link rel="icon" type="image/ico" href="assets/images/favicon-16x16.png">
     <!-- css reset -->
     <link rel="stylesheet" href="assets/css/reset.css" />
     <!-- bootstrap  -->
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
     <!-- custom css -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-	<body onload='init();'>
-    <div class="container text-center">
-      <!-- log in screen -->
-      <div class="wrapper22 mx-auto" id="login-screen">
+    <link rel="stylesheet" href="assets/css/aboutus.css" />
+</head>
 
-      <div id="login">
-        <form>
-          Username <br>
-          <input type="text" id="username">
-          <br>
-          Password
-          <br>
-          <input type="password" id="password">
-          <br><br>
-          <input type="submit" value="LOGIN" id="user-login">
-        </form>
-      </div>
-  </div>
+<body>
+    <header id="masthead">
 
-      <!-- bridge screen -->
-      <div class="wrapper22 mx-auto hidden" id="active">      
-        <div class="row">
-        <div class="col-4">
-          <!-- dropdown buttons -->
-          <button
-            class="btn btn-light btn-lg dropdown-toggle"
-            id="bridge-select"
-            type="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Select Bridge
-          </button>
-          <br />
-          <div class="dropdown-menu">
-            <button class="btn dropdown-button bridge-name" id="bridge-1" data-type="est" data-coord="lat=29.59&lon=-81.68">Buffalo Bluff</button><br />
-            <button class="btn dropdown-button bridge-name" id="bridge-2" data-type="est" data-coord="lat=37.53&lon=-77.42">Kanawha Canal</button><br />
-            <button class="btn dropdown-button bridge-name" id="bridge-3" data-type="cst" data-coord="lat=30.37&lon=-88.56">Pascagoula</button><br />
-            <button class="btn dropdown-button bridge-name" id="bridge-4" data-type="est" data-coord="lat=26.72&lon=-80.05">Flagler Memorial</button><br />
-            <button class="btn dropdown-button bridge-name" id="bridge-5" data-type="pst" data-coord="lat=33.77&lon=-118.24">Henry Ford</button><br />
-            <button class="btn dropdown-button bridge-name" id="bridge-6" data-type="est" data-coord="lat=38.36&lon=-76.99">Harry Nice</button><br />
-          </div>
+        <div class="container">
+            <a href="index.html" id="logo">B.O.A.T Systems</a>
 
-          <!-- bridge operation buttons  -->
+            <nav>
+                <a href="index.html">Home</a>
 
-          <button class="btn open-button" data-state="closed" id="operate-button">
-           OPEN</button
-          ><br />
-          <button
-            class="btn btn-success operation-button"
-            data-state="closed"
-            id="switch-1"
-          >
-            SPAN LOCKS DRIVEN</button
-          ><br />
-          <button
-            class="btn btn-success operation-button"
-            data-state="closed"
-            id="switch-2"
-          >
-            TAIL LOCKS DRIVEN</button
-          ><br />
-          <button
-            class="btn btn-success operation-button"
-            data-state="closed"
-            id="switch-3"
-          >
-            MOTOR BRAKES SET</button
-          ><br />
-          <button
-            class="btn btn-success operation-button"
-            data-state="closed"
-            id="switch-4"
-          >
-            MACHINERY BRAKES SET</button
-          ><br />
-          <button
-            class="btn btn-success operation-button"
-            data-state="closed"
-            id="switch-5"
-          >
-            BRIDGE CLOSED</button
-          ><br />
-
-
-          <!-- Button trigger modal -->
-<button type="button" class="btn operation-button" id="fault-button" data-toggle="modal" data-target="#alarm-modal">
-    Fault History
-  </button>
-        <!-- Fault History -->
-  <div class="modal fade" id="alarm-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Fault History</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+                <a href="contactus.html">Contact Us</a>
+                <a href="demo.html" target="_blank">Demo Login</a>
+            </nav>
         </div>
-        <div class="modal-body">
-          <ul id="alarm-list">
-          
-          </ul>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-danger" id="fault-history">Historic Log</button>
-            <button type="button" class="btn btn-danger" id="clear-faults">Clear Faults</button>
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Acknowledge Faults</button>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
 
+    </header>
+
+    <main role="main">
+
+
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <div class="container">
+                <h4 class="display-5">Bridge Operation Assurance Training Systems</h4>
+                <p class="lead"></p>
+                <hr class="my-4">
+                <p>
+                    <justified>There are 297 movable Bridges in the United States. BOATS which stands for
+                        Bridge
+                        Operation
+                        Assurance Training & Simulation
+                        has been built with the intention of being an operational solution that brings uniformity,
+                        efficiency
+                        and safety to any
+                        motorized and mechanically operated bascule bridge.
+                    </justified>
+                </p>
+                <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+            </div>
         </div>
-        <div class="col-8">
-          <div class="row">
-            <div class="col-8 slide-right ">
-              <!-- Weather Station -->
-              <div class="border1">
-                <div class="row weather-content">
-                    <div class="col-12"><h2 class="weather-title">Weather Information</h2></div>
-                  <div class="col-4">
-                      <div class="weather-box-title">Temperature</div>
-                      <div id="temp-display" class="weather-box">&nbsp;</div>
-                      <div class="weather-box-title">Humidity</div>
-                      <div id="humidity-display" class="weather-box">&nbsp;</div>
-                  </div>
-                  <div class="col-4">
-                    <div class="weather-box-title">Conditions</div>
-                  <div id="conditions-display" class="weather-box">&nbsp;</div>
-                    <div class="weather-box-title">Wind Speed</div>
-                  <div id="windSpeed-display" class="weather-box">&nbsp;</div>
-                  </div>
-                  <div class="col-4">
-                    <div class="wind-direction-box-title">Wind Direction</div>
-                  <div id="windDegrees-display" class="wind-direction-box">
-                    
+
+        <div class="container">
+            <!-- Example row of columns -->
+            <div class="row">
+                <!-- <div class="col-md-4">
+                    <h2>Uniformity</h2>
+                    <p>
+                        Uniformity in processes and procedures helps insure the greatest opportunity for success. An
+                        application that
+                        can be installed in multiple bridges insures training concistency as well operational
+                        concistency.
+
+
+                        If a bascule bridge is operated
+                        improperly, there could be severe damage requiring costly repairs. BOATS is designed to prevent
+                        improper use and to maintain sustainability.
+                        The downtime of any bridge can cause millions of dollars of lost revenue.
+
+
+                    </p>
+                 -->
+                <!-- <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> -->
+                <div class="card" style="width: 19rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
-                  
-                    <canvas id="compass" height=110 width=109></canvas>
-                    
-                  </div>
                 </div>
-              </div>
 
+                <div class="card" style="width: 19rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
 
+                <div class="card" style="width: 19rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div id="last-card" class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <!-- <div class="col-md-4 mx-1">
+                    <h2>Efficiency</h2>
+                    <p> Gone are the days of having one bridge operator to manually operate a drawbridge or
+                        turnstyle
+                        bridge. One person can operate multiple bridges
+                        from the safey of a secure control room. This is especially the perfect setup for railroad
+                        companies. Accountability is key and access to error logs
+                        helps prevent failures.
+                    </p>
+                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Safety</h2>
+                    <p>One of the components of safety and the safe operation of bridges is establishing a process and
+                        sticking to it. B.O.A.T.S. designed to provide that process,
+                        thereby making the safe operation of bridges that much easier.</p>
+                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                </div> --> -->
             </div>
-            <!-- Time Display -->
-            <div class="col-4 slide-left">
-              
-              <div class="row clock-content">
-                  <div class="col-12"><h5 class="clock-title">Current Local Time</h5></div>
-                  <div class="clock">00:00:00</div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <h1 id="bridge-title">
-                Select Bridge
-              </h1>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <div id="canvas"> <img src="assets/images/Bridge1.JPG" id="bridge-image">
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-    </div>
-    <!-- bootstrap javascript files -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
+
+        <hr>
+
+        </div> <!-- /container -->
 
 
+        <hr />
+        </div>
+        <!-- /container -->
+    </main>
 
+    <!-- </div> -->
+    <div class="row2"></div>
 
-    <!-- moment.js -->
-    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.23/moment-timezone-with-data.min.js"></script>
-  
-    <!-- custom js -->
-    <script src="assets/javascript/app.js"></script>
+    <hr />
 
-<!--compass-->
-<script src="assets/javascript/compass.js" async></script>    
-    <!--bridgecontrol-->
-    <script src="assets/javascript/bridgecontrol.js"></script>
-    <!--Bridge Animation-->
-    <script src="assets/javascript/bridgeAnimation.js"></script>
+    <footer class="footer">
+        <p>&copy; Company 2019</p>
+    </footer>
 
+    <!-- </div> -->
 
+    <!-- <footer id="footer">
+        <div class="container">
+            Copyright &copy;
+        </div>
+    </footer> -->
+</body>
 
-
-  </body>
 </html>
