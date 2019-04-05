@@ -8,7 +8,6 @@
   margin: 3px;
 }
 
-
 .container {
   margin-top: 50px;
   width: 960px !important;
@@ -189,7 +188,6 @@ body {
 #login-screen {
   height: 500px;
   color: black;
-  
 }
 
 #login {
@@ -207,8 +205,7 @@ body {
   border-radius: 6px;
 }
 
-.border1{
-
+.border1 {
   width: 416px;
   height: 222px;
   margin: 10px 0px 0px 0px;
@@ -216,9 +213,8 @@ body {
   border-top-left-radius: 3px;
 }
 
-
 .weather-content {
-  background: rgb(51,51,51);
+  background: rgb(51, 51, 51);
   width: 416px;
   width: 416px;
   height: 222px;
@@ -226,12 +222,10 @@ body {
   padding: 0px;
   border-top-left-radius: 3px;
   color: white;
-
-
 }
 
 .clock-content {
-  background: rgb(51,51,51);
+  background: rgb(51, 51, 51);
   width: 215px;
   height: 222px;
   margin-top: 10px;
@@ -239,7 +233,6 @@ body {
   border-top-left-radius: 3px;
   color: white;
 }
-
 
 .clock-title {
   padding-top: 23px;
@@ -259,7 +252,6 @@ body {
   border: 1px solid black;
 }
 
-
 .weather-title {
   padding-top: 15px;
   padding-bottom: 0px;
@@ -271,7 +263,6 @@ body {
   padding-top: 6px;
   padding-bottom: 6px;
 }
-
 
 .weather-box {
   background: lightgrey;
@@ -286,7 +277,6 @@ body {
 .wind-direction-box-title {
   font-size: 15px;
   padding-top: 5px;
-
 }
 
 .wind-direction-box {
@@ -299,9 +289,8 @@ body {
   height: 30px;
 }
 
-
 #compass {
-  background: url("../images/white_leather/white_leather.png") ; 
+  background: url("../images/white_leather/white_leather.png");
   background-size: cover;
   border: 1px solid black;
   width: 109px;

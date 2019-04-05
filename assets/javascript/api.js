@@ -17,12 +17,10 @@ $(document).on("click", ".bridge-name", function displayTime() {
   var timezone = $(this).attr("data-type");
   var timeQueryURL = "http://worldclockapi.com/api/json/" + timezone + "/now";
 
-
   $.ajax({
     url: timeQueryURL,
     method: "GET"
   }).then(function(response) {
-
     function runTimer(tz) {
       clearInterval(intervalID);
       intervalID = setInterval(function updateTime() {
@@ -32,11 +30,10 @@ $(document).on("click", ".bridge-name", function displayTime() {
             .format("HH:mm:ss")
         );
       }, 1000);
-    };
-
+    }
 
     var timeZoneName = response.timeZoneName;
-//changes the moment.tz timezone for the clock based on which bridge was selected
+    //changes the moment.tz timezone for the clock based on which bridge was selected
     if (timeZoneName === "Eastern Standard Time") {
       runTimer("America/New_York");
     } else if (timeZoneName === "Central Standard Time") {
@@ -59,8 +56,6 @@ $(document).on("click", ".bridge-name", function displayWeather() {
     url: weatherQueryURL,
     method: "GET"
   }).then(function(response) {
-
-
     var temp = Math.round(response.main.temp);
     var humidity = response.main.humidity;
     var conditions = response.weather[0].main;
@@ -90,21 +85,21 @@ $(document).on("click", ".bridge-name", function displayWeather() {
       ];
       return arr[val % 16];
     }
-  
+
     var conditionsUppercase = titleCase(conditions);
 
     $("#temp-display").text(`${temp}°F`);
     $("#humidity-display").text(`${humidity}%`);
     $("#conditions-display").text(`${conditionsUppercase}`);
     $("#windSpeed-display").text(`${windSpeed}mph`);
-    if (isNaN(windDegrees) === true || windDegrees == null){
-      $("#windDegrees-display").text("No Data")
+    if (isNaN(windDegrees) === true || windDegrees == null) {
+      $("#windDegrees-display").text("No Data");
     } else {
-    $("#windDegrees-display").text(
-      `${windDegrees}°${degToCompass(windDegrees)}`
-    );
-  }
-    degrees=windDegrees;
+      $("#windDegrees-display").text(
+        `${windDegrees}°${degToCompass(windDegrees)}`
+      );
+    }
+    degrees = windDegrees;
 
     console.log(temp);
     console.log(humidity);
