@@ -181,6 +181,9 @@ if ($("#username").val().trim() === "") {
 
 
 function closeSwitches () {
+  $("#operate-button").text("OPEN");
+  $("#operate-button").removeClass("transition")
+  
   $switch1.attr("data-state", "closed");
   $switch1.attr("class", "btn btn-success operation-button");
   $switch2.attr("data-state", "closed");
