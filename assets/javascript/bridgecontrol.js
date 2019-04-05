@@ -9,6 +9,7 @@ $("#operate-button").on("click", function() {
   if (isOpen === false) {
     //FLIP THE BRIDGE STATE SO THE FUNCTION DOESN'T CALL TWICE
     isOpen = true;
+    closeSwitches();
     //CHANGE THE CLASS TO TRANSITION
     $("#operate-button").toggleClass("transition released");
     //CHANGE THE TEXT TO OPENING
@@ -23,6 +24,7 @@ $("#operate-button").on("click", function() {
     $("#operate-button").toggleClass("transition");
     //CHANGE THE TEXT TO CLOSING
     $("opeate-button").text("CLOSING");
+    openSwitches();
     runClosingSequence();
   } 
 }
