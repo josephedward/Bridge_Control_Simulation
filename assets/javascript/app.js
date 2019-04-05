@@ -15,7 +15,7 @@ var loggedIn = false;
 $switch1.on("click", function() {
 
     //if statement to prevent out of sequence operation
-  if ($switch2.attr("data-state") === "closed") {
+  if ($switch2.attr("data-state") === "closed" && $("#bridge-title").text().trim() !== "Select Bridge") {
     $switch1.toggleClass("released");
     if (
       $switch1.text().trim() === "SPAN LOCKS DRIVEN" &&
@@ -159,30 +159,42 @@ $("#clear-faults").on("click", function(){
 });
 
 
+// log in functionality
+var username = "";
+$("#user-login").on("click", function(event){
+
+  event.preventDefault();
+
+if ($("#username").val().trim() === "") {
+  return false;
+} else if ($("#password").val().trim() === "") {
+  return false;
+} else {
+  loggedIn = true;
+  username = $("#username").val().trim();
+  $("#login-screen").toggleClass("hidden");
+  $("#active").toggleClass("hidden");
+
+}
+})
 
 
 
+function closeSwitches () {
 
-// // log in functionality
-// var username = "";
-// $("#user-login").on("click", function(event){
+  $switch1.attr("data-state", "closed");
+  $switch1.attr("class", "btn btn-success operation-button");
+  $switch2.attr("data-state", "closed");
+  $switch2.attr("class", "btn btn-success operation-button");
+  $switch3.attr("data-state", "closed");
+  $switch3.attr("class", "btn btn-success operation-button");
+  $switch4.attr("data-state", "closed");
+  $switch4.attr("class", "btn btn-success operation-button");
+  $switch5.attr("data-state", "closed");
+  $switch5.attr("class", "btn btn-success operation-button");
 
-//   event.preventDefault();
 
-// if ($("#username").val().trim() === "") {
-//   alert("You fucked up the login.");
-//   return false;
-// } else if ($("#password").val().trim() === "") {
-//   alert("you fucked up the password");
-//   return false;
-// } else {
-//   loggedIn = true;
-//   username = $("#username").val().trim();
-//   $("#login-screen").toggleClass("hidden");
-//   $("#active").toggleClass("hidden");
-
-// }
-// })
+}
 
 
 
