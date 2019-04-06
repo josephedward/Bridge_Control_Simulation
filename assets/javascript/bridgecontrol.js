@@ -138,6 +138,7 @@ function machineryBrakes() {
     //UPDATE CLASS AND TEXT
     animateMachineBrakeSet();
     $switch4.toggleClass("released");
+    $switch4.css("font-size","18px");
     $switch4.text("MACHINERY BRAKES SET");
   }
 }
