@@ -41,7 +41,7 @@ function pushFirebase(errorItem) {
    // function that adds alarms to the alarm history modal
 function alarmList(switchNum) {
    var currentDate = moment().format('lll');
-   errorItem= currentDate.toUpperCase() + " Fault:"+ $(switchNum).text() + "OUT OF SEQUENCE";
+   errorItem= currentDate.toUpperCase() + " FAULT: "+ $(switchNum).text() + " PRESSED OUT OF SEQUENCE";
    var errorLi = `<li>${errorItem}</li>`;
    pushFirebase(errorLi);
    errorLog.push(errorLi);

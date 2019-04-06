@@ -23,48 +23,13 @@ $("#operate-button").on("click", function() {
     //TOGGLE THE TRANSITION CLASS
     $("#operate-button").toggleClass("transition");
     //CHANGE THE TEXT TO CLOSING
-    $("opeate-button").text("CLOSING");
+    $("#operate-button").text("CLOSING");
     openSwitches();
     runClosingSequence();
   } 
 }
 });
 
-//OPENING FUNCTION
-function runOpeningSequence() {
-  setTimeout(function() {
-    //SHOW SPAN LOCKS PULLING
-    spanLocks();
-    setTimeout(function() {
-      //SHOW TAIL LOCKS PULLING
-      tailLocks();
-      setTimeout(function() {
-        //SHOW MOTOR BRAKES RELEASING
-        motorBrakes();
-        setTimeout(function() {
-          //SHOW MACHINERY BRAKES RELEASING
-          machineryBrakes();
-          setTimeout(function() {
-            //BRIDGE OPENING ANIMATION PLAYS
-            spanOpen();
-            setTimeout(function() {
-              //
-              spanStop();
-              openSwitches();
-              isRunning = false;
-              //
-            }, 1250);
-            //BRIDGE OPENING TIMER
-          }, 1200);
-          // MACHINERY BRAKES TIMER
-        }, 1200);
-        //MOTOR BRAKES TIMER
-      }, 1300);
-      // TAIL LOCKS TIMER
-    },1350);
-    //SPAN LOCKS TIMER
-  }, 1000);
-}
 
 
 
@@ -83,8 +48,8 @@ function spanLocks() {
     $switch1.toggleClass("released");
     $switch1.text("SPAN LOCKS DRIVEN");
     //changeover operate button
-    $("#operate-button").toggleClass("transition released");
-    $("#operate-button").text("OPEN");
+    // $("#operate-button").toggleClass("transition released");
+    // $("#operate-button").text("OPEN");
   }
 }
 
@@ -143,7 +108,7 @@ function machineryBrakes() {
   }
 }
 
-//SPAN MOTION FUNCTION??
+//SPAN MOTION FUNCTION
 function spanMotion() {
   $switch5.toggleClass("released transition");
   $switch5.text("BRIDGE MOVING");
@@ -154,7 +119,7 @@ function spanMotion() {
   }
 }
 
-//SPAN STOP FUNCTION??
+//SPAN STOP FUNCTION
 
 function spanStop() {
   if ($switch5.text().trim() === "BRIDGE MOVING" && isOpen === true) {
@@ -172,13 +137,50 @@ function spanStop() {
 }
 
 
+//OPENING FUNCTION
+function runOpeningSequence() {
+  setTimeout(function() {
+    //SHOW SPAN LOCKS PULLING
+    spanLocks();
+    setTimeout(function() {
+      //SHOW TAIL LOCKS PULLING
+      tailLocks();
+      setTimeout(function() {
+        //SHOW MOTOR BRAKES RELEASING
+        motorBrakes();
+        setTimeout(function() {
+          //SHOW MACHINERY BRAKES RELEASING
+          machineryBrakes();
+          setTimeout(function() {
+            //BRIDGE OPENING ANIMATION PLAYS
+            spanOpen();
+            setTimeout(function() {
+              //
+              spanStop();
+              openSwitches();
+              isRunning = false;
+              //
+            }, 1250);
+            //BRIDGE OPENING TIMER
+          }, 1200);
+          // MACHINERY BRAKES TIMER
+        }, 1200);
+        //MOTOR BRAKES TIMER
+      }, 1300);
+      // TAIL LOCKS TIMER
+    },1350);
+    //SPAN LOCKS TIMER
+  }, 1000);
+}
 /* CLOSING SEQUENCE:
 1. LOWER BRIDGE ANIMATION
 2. REVERSE ORDER FUNCTIONS...
 */
+
+
 function runClosingSequence() {
   setTimeout(function() {
-    animateBridgeClose();
+    spanClose();
     setTimeout(function() {
       spanStop();
       setTimeout(function() {
@@ -189,15 +191,20 @@ function runClosingSequence() {
             tailLocks();
             setTimeout(function() {
               spanLocks();
-              closeSwitches();
-              isRunning = false;
-            }, 1350);
-          }, 1300);
-        }, 1200);
-      }, 1200);
-    }, 1250);
-  }, 10);
+              setTimeout(function(){
+                closeSwitches();
+                isRunning = false;
+              },1700)
+            }, 1700);
+          }, 1350);
+        }, 1250);
+      }, 1250);
+    }, 10);
+  }, 120);
 }
+
+
+
 
 //FUNCTION TO OPEN SPAN
 
@@ -232,9 +239,7 @@ function spanStop() {
     $("#operate-button").text("CLOSE");
     $("#operate-button").toggleClass("transition");
   } else if ($switch5.text().trim() === "BRIDGE MOVING" && isOpen === false) {
-    $switch5.toggleClass("released");
+    $switch5.toggleClass("transition");
     $switch5.text("BRIDGE CLOSED");
-    $("#operate-button").text("OPEN");
-    $("#operate-button").toggleClass("transition");
   }
 }
