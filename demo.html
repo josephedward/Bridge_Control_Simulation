@@ -25,15 +25,31 @@
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <!-- custom css -->
     <link rel="stylesheet" href="assets/css/style.css" />
+   
   </head>
   <body onload='init();'>
     
+      <header id="masthead">
 
+          <div class="container-fluid">
+            <div class="narrow mx-auto">
+              <a href="index.html" id="logo">B.O.A.T. Systems</a>
+  
+              <nav>
+                  <a href="index.html">Home</a>
+  
+                  <a href="contactus.html">Contact Us</a>
+                  <a href="demo.html" target="_blank">Demo</a>
+              </nav>
+              </div>
+          </div>
+  
+      </header>
       
     <div class="container text-center">
 
       <!-- log in screen -->
-      <div class="wrapper22 mx-auto" id="login-screen">
+      <div class="wrapper22 mx-auto hidden" id="login-screen">
 
       <div id="login">
         <form>
@@ -50,7 +66,7 @@
   </div>
 
       <!-- bridge screen -->
-      <div class="wrapper22 mx-auto hidden" id="active">      
+      <div class="wrapper22 mx-auto" id="active">      
         <div class="row">
         <div class="col-4">
           <!-- dropdown buttons -->
