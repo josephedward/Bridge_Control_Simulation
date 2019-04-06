@@ -5,9 +5,6 @@ var img = null,
 	degrees = null;
 
 
-degrees=windDegrees;
-
-
 function clearCanvas() {
 	 // clear canvas
 	ctx.clearRect(0, 0, 110, 110);

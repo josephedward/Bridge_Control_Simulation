@@ -67,19 +67,6 @@ function runOpeningSequence() {
 }
 
 
-function bridgeExplodes() {
-  var path =
-    "http://api.giphy.com/v1/gifs/E1q0A3MWQ98I0?api_key=6aJGcOZM6D5TfU3Ptk0Hkim49Je9DsJv";
-  var apiKey = "6aJGcOZM6D5TfU3Ptk0Hkim49Je9DsJv";
-
-  $.ajax({
-    url: path,
-    type: "GET"
-  }).done(function(response) {
-    console.log(response);
-  });
-}
-
 
 //SPAN LOCKS FUNCTION
 function spanLocks() {
@@ -144,6 +131,7 @@ function machineryBrakes() {
     //UPDATE CLASS AND TEXT
     animateMachineBrakeRelease();
     $switch4.toggleClass("released");
+    $switch4.css("font-size","15px");
     $switch4.text("MACHINERY BRAKES RELEASED");
     //CHECK THAT BRAKES ARE RELEASED
   } else if ($switch4.text().trim() === "MACHINERY BRAKES RELEASED") {
