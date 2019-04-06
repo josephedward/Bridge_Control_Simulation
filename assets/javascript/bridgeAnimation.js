@@ -32,7 +32,7 @@ function animateBridgeOpen() {
 function animateBridgeClose() {
   i = 5;
   //check bridge state
-  if ((bridgeOpen = true)) {
+  if (bridgeOpen = true) {
     $("#bridge-image").attr("src", "assets/images/Bridge5.JPG");
     //interval for decrementing through bridge animations
     var bridgeMove = setInterval(function() {
@@ -48,6 +48,7 @@ function animateBridgeClose() {
 
     //update bridge state
     bridgeOpen = false;
+    
     return i;
   }
 }
