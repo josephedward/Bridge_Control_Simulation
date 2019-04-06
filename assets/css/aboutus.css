@@ -1,3 +1,5 @@
+/* Global items */
+
 body {
 
     background: url('../images/Ashtabula_Lift_Bridge.jpg');
@@ -18,19 +20,16 @@ body {
     border-bottom: 2px solid #cccccc;
   }
 
-  #logo {
-  font-size: 20px;
-
-  }
+ 
 
 
-.container-fluid {
+/* .container-fluid {
 
     text-align: center;
     margin: 0 auto;
     padding: 0;
 
-}
+} */
 
 .navbar {
     text-align: center;
@@ -64,7 +63,7 @@ nav {
 #logo {
 
     float: left;
-    width: 25%;
+    
     height: 90px;
     font-family: Georgia, Times, "Times New Roman", serif;
     font-size: 45px;
@@ -85,30 +84,49 @@ nav {
 
 
 .jumbotron {
-    width: 960px;
+    width: 937px;
     margin: 0 auto;
     padding: 05px;
     font-size: 20px;
     border-radius: 0;
     border-bottom-right-radius: 15px !important; 
     border-bottom-left-radius: 15px !important; 
-    opacity: .7;
+    opacity: .8;
     padding-top: 100px;
+    background: rgb(223, 216, 216);
+     
 
 }
 
+.row2 {
+    height: 400px;
+        
+    }
+    
+    footer {
+        padding: 30px 0;
+        clear: both;
+        font-size: 12px;
+        color: #ffffff;
+        color: #cccccc;
+        text-align: center;
+        background: #666666;
+        border-top: 8px solid black;
+        height: 50px;
+        width: 100%;
+        opacity: .8;
+        
+        
+      }
 
 
-#notJumbo {
-    margin: 0 auto;
-    padding: 05px;
-    font-size: 20px;
-    border-radius: 0;
-    border-bottom-right-radius: 15px !important; 
-    border-bottom-left-radius: 15px !important; 
-    opacity: .75;
-    padding-top: 100px;
-    background: rgb(223, 216, 216);
+
+/* Home Page items */
+
+
+.test {
+width: 97%;
+
 
 }
 
@@ -127,22 +145,23 @@ nav {
 
   .card {
     background: rgb(223, 216, 216);
-    opacity: .7; 
+    opacity: .9; 
     border-radius: 15px; 
     border-block-end-width: 5px;
     margin-right: 7px;
+    width: 306px;
   }
 
   #last-card {
     background: rgb(223, 216, 216);
-    opacity: .7; 
+    opacity: .9; 
     border-radius: 15px; 
     border-block-end-width: 5px;
 
   }
 
  
-p {
+/* p {
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
@@ -150,7 +169,7 @@ p {
     margin-inline-end: 0px;
     margin-top: 0;
     margin-bottom: 1rem;
-}
+} */
 
 
 * {
@@ -158,25 +177,44 @@ p {
 
 }
 
-
-
-.row2 {
-height: 400px;
+.col-lg-12 {
+width: 960px;
 
 }
 
-footer {
-    padding: 30px 0;
-    clear: both;
-    font-size: 12px;
-    color: #ffffff;
-    color: #cccccc;
-    text-align: center;
-    background: #666666;
-    border-top: 8px solid black;
-    height: 50px;
-    width: 100%;
-    opacity: .8;
+.three  {
+width: 32%;
+float: left;
+background: rgb(223, 216, 216);
+opacity: .8; 
+margin: 3px;
+
+
+}
+
+.safetyCol {
+    width: 33%;
+    float: left;
+    background: rgb(223, 216, 216);
+    opacity: .8; 
     
-    
-  }
+
+
+}
+
+/* contact US Page */
+
+
+.jumbotron1 {
+    width: 960px;
+    margin: 0 auto;
+    padding: 05px;
+    font-size: 20px;
+    border-radius: 0;
+    border-bottom-right-radius: 15px !important; 
+    border-bottom-left-radius: 15px !important; 
+    opacity: .9;
+    padding-top: 100px;
+    background: rgb(223, 216, 216);
+}
+
