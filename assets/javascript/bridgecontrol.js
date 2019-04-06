@@ -55,13 +55,13 @@ function runOpeningSequence() {
               //
             }, 1250);
             //BRIDGE OPENING TIMER
-          }, 1000);
+          }, 1200);
           // MACHINERY BRAKES TIMER
-        }, 1000);
+        }, 1200);
         //MOTOR BRAKES TIMER
-      }, 1000);
+      }, 1300);
       // TAIL LOCKS TIMER
-    },1000);
+    },1350);
     //SPAN LOCKS TIMER
   }, 1000);
 }
@@ -86,11 +86,13 @@ function spanLocks() {
   //CHECK THAT LOCKS ARE DRIVEN
   if ($switch1.text().trim() === "SPAN LOCKS DRIVEN") {
     //UPDATE CLASS AND TEXT
+    animateLockPull();
     $switch1.toggleClass("released");
     $switch1.text("SPAN LOCKS PULLED");
     //IF THE LOCKS ARE PULLED
   } else if ($switch1.text().trim() === "SPAN LOCKS PULLED") {
     //UPDATE CLASS AND TEXT
+    animateLockDrive();
     $switch1.toggleClass("released");
     $switch1.text("SPAN LOCKS DRIVEN");
     //changeover operate button
@@ -104,11 +106,14 @@ function tailLocks() {
   //CHECK THAT LOCKS ARE DRIVEN
   if ($switch2.text().trim() === "TAIL LOCKS DRIVEN") {
     //UPDATE TEXT AND CLASS
+    // animateLockPull();
+    animateTailLockPull();
     $switch2.toggleClass("released");
     $switch2.text("TAIL LOCKS PULLED");
   //CHECK THAT LOCKS ARE PULLED
   } else if ($switch2.text().trim() === "TAIL LOCKS PULLED") {
     //UPDATE TEXT AND CLASS
+    animateTailLockDrive();
     $switch2.toggleClass("released");
     $switch2.text("TAIL LOCKS DRIVEN");
   }
@@ -120,11 +125,13 @@ function motorBrakes() {
   //CHECK THAT BRAKES ARE SET
   if ($switch3.text().trim() === "MOTOR BRAKES SET") {
     //UPDATE CLASS AND TEXT
+    animateMotorBrakeRelease();
     $switch3.toggleClass("released");
     $switch3.text("MOTOR BRAKES RELEASED");
     //CHECK THAT BRAKES ARE RELEASED
   } else if ($switch3.text().trim() === "MOTOR BRAKES RELEASED") {
     //UPDATE CLASS AND TEXT
+    animateMotorBrakeSet();
     $switch3.toggleClass("released");
     $switch3.text("MOTOR BRAKES SET");
   }
@@ -135,11 +142,13 @@ function machineryBrakes() {
   //CHECK THAT BRAKES ARE SET
   if ($switch4.text().trim() === "MACHINERY BRAKES SET") {
     //UPDATE CLASS AND TEXT
+    animateMachineBrakeRelease();
     $switch4.toggleClass("released");
     $switch4.text("MACHINERY BRAKES RELEASED");
     //CHECK THAT BRAKES ARE RELEASED
   } else if ($switch4.text().trim() === "MACHINERY BRAKES RELEASED") {
     //UPDATE CLASS AND TEXT
+    animateMachineBrakeSet();
     $switch4.toggleClass("released");
     $switch4.text("MACHINERY BRAKES SET");
   }
@@ -193,10 +202,10 @@ function runClosingSequence() {
               spanLocks();
               closeSwitches();
               isRunning = false;
-            }, 1000);
-          }, 1000);
-        }, 1000);
-      }, 1000);
+            }, 1350);
+          }, 1300);
+        }, 1200);
+      }, 1200);
     }, 1250);
   }, 10);
 }
